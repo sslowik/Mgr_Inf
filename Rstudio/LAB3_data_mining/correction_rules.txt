@@ -1,0 +1,19 @@
+E <- editset(expression(
+  Sepal.Length <= 30, 
+  Sepal.Length > 0, 
+  Sepal.Width > 0, 
+  Petal.Length > 0, 
+  Petal.Width > 0, 
+  Petal.Width > 0,
+  Petal.Length > 2 * Petal.Width, 
+  Sepal.Length > Petal.Length, 
+  Species %in% c("setosa", "versicolor" , "virginica")
+))
+
+
+u2 <- correctionRules(expression(
+   if (!is.na(Sepal.Length) & Sepal.Length >= 30) { Sepal.Lenth <- NA }
+   if (!is.na(Petal.Length) & !is.na(Petal.Width)  
+   if ()
+   
+))

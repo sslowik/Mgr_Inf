@@ -1,0 +1,10 @@
+1. zapisac plik z rozszerzeniem .md
+
+2. dodac wokól kodu : 
+
+``` ruby
+
+```
+
+3. kolorki powinny sie pojawic
+

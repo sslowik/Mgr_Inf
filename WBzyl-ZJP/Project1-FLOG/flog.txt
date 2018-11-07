@@ -1,0 +1,29 @@
+https://github.com/seattlerb/flog
+
+
+flog -ad verse.rb # --all --details
+
+
+
+  1622.8: flog total
+    16.6: flog/method average
+
+   171.1: Mastodon::MigrationHelpers#update_column_in_batches lib/mastodon/migration_helpers.rb:308-404
+    87.7: Mastodon::MigrationHelpers#cleanup_concurrent_column_type_change lib/mastodon/migration_helpers.rb:569-671
+    87.6: Mastodon::FeedsCLI#build         lib/mastodon/feeds_cli.rb:28-67
+    76.3: Mastodon::MediaCLI#remove        lib/mastodon/media_cli.rb:31-57
+    71.5: Mastodon::EmojiCLI#import        lib/mastodon/emoji_cli.rb:28-62
+    71.3: Mastodon::AccountsCLI#cull       lib/mastodon/accounts_cli.rb:218-260
+    70.6: Paperclip::LazyThumbnail#make    lib/paperclip/lazy_thumbnail.rb:5-17
+    61.9: Mastodon::AccountsCLI#create     lib/mastodon/accounts_cli.rb:69-104
+    48.9: Mastodon::AccountsCLI#refresh    lib/mastodon/accounts_cli.rb:277-303
+    48.9: Mastodon::AccountsCLI#modify     lib/mastodon/accounts_cli.rb:130-158
+    41.3: main#none
+    36.5: Mastodon::MigrationHelpers#rename_column_concurrently lib/mastodon/migration_helpers.rb:479-537
+    33.0: Mastodon::AccountsCLI#none
+    32.8: main#setup_redis_env_url         lib/mastodon/redis_config.rb:3-17
+    31.3: Devise::Strategies::LdapAuthenticatable#authenticate! lib/devise/ldap_authenticatable.rb:9-33
+    30.6: Mastodon::Snowflake::ensure_id_sequences_exist lib/mastodon/snowflake.rb:112-131
+
+
+

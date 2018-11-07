@@ -1,0 +1,6 @@
+1. sklonowac repo w wybranym jezyku
+2. dopisac testy dla innych przedmiotów
+3. uruchomic i zbadac czy asercje sie pojawiaja
+
+nalezy dodac testy (liste itemów i odpalic w wybranyn jezyku)
+
