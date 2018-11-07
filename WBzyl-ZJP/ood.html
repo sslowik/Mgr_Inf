@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Dziedziczenie</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Object Oriented Design
+
+--
+
+## The Problem Design Solves
+
+---
+### Imagine writing a new application
+
+Imagine that this application comes equipped with a complete and correct set of
+requirements. And if you will, imagine one more thing: once written, this
+application need never change.
+
+---
+### Unfortunately, something will change
+
+**It always does.**
+
+The customers didn’t know what they wanted, they didn’t say what they meant.
+
+You didn’t understand their needs, you’ve learned how to do something better.
+
+Even applications that are perfect in every way are not stable. The application
+was a huge success, now everyone wants more.
+
+### Change is unavoidable
+
+It is omnipresent, and inevitable.
+
+---
+### Why change is hard
+
+**Object-oriented applications are made up of parts that interact to produce the
+behavior of the whole.**
+
+The parts are **objects**. Interactions are embodied in the **messages** that
+pass between them.
+
+Getting the right message to the correct target object requires that the sender
+of the message know things about the receiver.
+
+**This knowledge creates dependencies between the two, and these dependencies
+stand in the way of change.**
+---
+
+## A practical definition of design
+
+Every application is a collection of code.
+
+**The code’s arrangement is the design.**
+
+Two isolated programmers, even when they share common ideas about design, can be
+relied upon to solve the same problem by arranging code in different ways.
+Design is not an assembly line where similarly trained workers construct
+identical widgets; it’s a studio where like-minded artists sculpt custom
+applications.
+
+**Design is an art – the art of arranging code.**
+
+Part of the difficulty of design is that every problem has two components. You
+must not only write code for the feature you **plan to deliver today**, you must
+also **create code that is amenable to being changed later.**
+
+---
+
+### Taking the future into consideration
+
+Taking the future into consideration might seem to **introduce a need for
+psychic** abilities normally considered outside the realm of programming.
+
+### Not so!
+
+**Programmers are not psychics.**
+
+Designs that **anticipate specific future requirements** almost always end
+badly.
+
+Practical design **does not anticipate** what will happen to your application.
+
+It merely accepts that something will and that, in the present, you cannot know
+what.
+
+**It doesn’t guess the future.**
+
+It preserves your options for accommodating the future.
+
+**It doesn’t choose. It leaves you room to move.**
+
+---
+
+# Design Principles
+
+The **SOLID** acronym, coined by Michael Feathers and popularized by Robert Martin,
+represents five of the most well-known principles of object-oriented design:
+
+1. Single Responsibility
+1. Open-Closed
+1. Liskov Substitution
+1. Interface Segregation
+1. Dependency Inversion
+
+Other principles include Andy Hunt and Dave Thomas’s **DRY** (Don’t Repeat
+Yourself) and the Law of Demeter (**LoD**) from the Demeter project at
+Northeastern University.
+
+---
+
+## Design Patterns ➨ wykład T. Borzyszkowskiego
+
+In addition to principles, object-oriented design involves patterns.
+
+To name common problems and to solve the problems in common ways brings the
+fuzzy into focus.
+
+**Design Patterns gave an entire generation of programmers the means to
+communicate and collaborate.**
+
+---
+
+## Judging design by SLOC, Flog, Flay and other metrics
+
+Bad OOD metrics are indisputably a sign of bad design.
+
+Code that scores poorly will be hard to change.
+
+**Unfortunately**, good scores don’t prove the opposite; that is, they don’t
+guarantee that the next change you make will be easy or cheap.
+
+The problem is that it is possible to create beautiful designs that
+over-anticipate the future.
+While these designs may generate very good OOD **metrics**, if they anticipate
+the wrong future, they will be expensive to fix when the real future finally
+arrives.
+
+**OOD metrics** cannot identify designs that do the wrong thing in the right way.
+
+---
+
+# Design from the Agile perspective
+
+**Agile believes that your customers can’t define the software they want before
+seeing it**, so
+
+* There is absolutely no point in doing a Big Up Front Design (BUFD)
+  (because it cannot possibly be correct).
+* No one can predict when the application will be done
+  (because you don’t know in advance what it will eventually do).
+
+Hence,
+
+* The most cost-effective way to produce what customers really want is
+  to collaborate with them.
+* Building software one small bit at a time such that each delivered bit
+  has the opportunity to alter ideas about the next.
+
+***The Agile experience*** is that this collaboration produces software that
+differs from what was initially imagined.
+The resulting software could not have been anticipated by any other means.
+
+---
+
+## When to design (cont.)
+
+The break-even point for design depends on the programmer.
+
+Inexperienced programmers who do a lot of anticipatory design may never reach a
+point where their earlier design efforts pay off.
+
+Skilled designers who write carefully crafted code this morning may save money
+this afternoon.
+
+Your experience likely lies somewhere between these extremes.
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true,
+        highlightSpans: true
+      });
+    </script>
+  </body>
+</html>

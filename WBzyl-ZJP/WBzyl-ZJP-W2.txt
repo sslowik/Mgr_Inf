@@ -1,0 +1,115 @@
+Idziemy po linii historii programowania. 
+
+WTF
+
+ruby.sadi.st/Flog.html   -  przyk³ad metryki ABC
+
+stopieñ skomplikowania kodu flog liczy na poziomie klasy, metody i tyle. 
+
+Mo¿e byæ wynik dla klasy i dla metody. 
+
+Chodzi o to,¿eby ogarn¹æ metody ¿eby stwierdziæ, co one robi¹. 
+
+ka¿de u¿ycie metody, funkcji - np przypisanie a = aval "1+1"    - za to ju¿ skacze metryka. Najni¿szy wynik jest za brak kodu
+
+a - asignment
+p - przypisanie
+
+przyk³ad g³upiego rozwi¹zania: 
+class Test
+  def blah
+    a = eval "1+1"
+    if a == 2 then
+      puts "yay"
+    end
+  end
+end
+
+obliczenia floga: 
+
+class Test           flog metrics     
+  def blah         # 11.2 =
+    a = eval "1+1" # 1.2 + 6.0 +
+    if a == 2 then # 1.2 + 1.2 + 0.4 +
+      puts "yay"   # 1.2
+    end
+  end
+end
+
+wyniki - poni¿ej 20 pkt floga jest ok. <20-60> - lekko œmierdzi. flog>60 => to ten kod jest groŸny. nikt go nie zrozumie. trzeba takiego programistê zwolniæ zanim narobi szkód :)
+
+Wyniki to jak temperatura - musimy wiedzieæ, jak j¹ interpretowaæ. 
+
+Gdy kod jest bez sensu, to ka¿da próba poprawienia czegós bez sensu te¿ bêdzie bez sensu. 
+
+Kiedyœ przed powstaniem narzêdzi typu flog koderzy mogli kombinowaæ, nawrzucac kodu itp. Teraz bada siê stopieñ jego skomplikowania i szkodliwoœci - code smells. 
+
+Obecnie istniej¹ce narzêdzia jak CodeClimate pomagaj¹ zdiagnozowac kod, jednak nie podaj¹ rozwi¹zañ jak go poprawiæ. 
+
+-----------|-----------------|------------|---------------|---------->
+         2000               2008        2010             2018
+
+Oko³o 2008 (Git) pojawi³y siê zasady pisania kodu: 
+DESIGN: SOLID, DRY, LoD 
+
+TDD
+BDD
+Agile
+
+Obecnie najprzyjemniej jest pisac kod, i nie przejmowaæ siê jaka bêdzie. Bo istnieje takie narzêdzie, jak REFAKTORYZACJA
+
+ABC Complexity
+Cyclomatic Complexity 
+
+nie jest dobrze gdy jest du¿o IFów
+Wymyœlono rozwi¹zania dla jêzyków obiektowych. 
+
+http://ruby.sadi.st/Flay.html
+
+flay   - sprawdza czy wystêpuj¹ podobne fragmenty kodu. 
+
+po 2008 - kod juz w repo, mo¿na ogl¹daæ - pojawiaj¹ siê kolejne narzêdzia: 
+
+Turbulence (churn&complexity)   - na materia³ach link do repo z którego mo¿na zaci¹gn¹æ Turbulence. na sigmie dzia³a. 
+
+
+!!!!!!!!!!!!!!!!!!!
+
+rubycritic - - - > ma zaimplementowane wszystkie rzeczy powy¿ej, dzia³a na sigmie? 
+wywala ca³y folder htmlowy pokazuj¹cy smrody w kodzie. 
+
+Jak sa problemy z odpaleniem w directory trzeba dodaæ Gem'y - co wolno uruchamiaæ w danym katalogu. 
+jakieœ kurwa gemfile - z których gemów moge korzystaæ z danego katalogu? 
+
+coœ próbowa³ zrobiæ z niedzia³aj¹cym turbulence. 
+
+ogólnie chyba musze zainstalowac linuxa ¿eby mieæ dostêp bezpoœredni do plików. 
+
+¿eby odpaliæ rubycritic w katalogu g³ównym trzeba wyedytowaæ Gemfile w mastodonie? 
+
+
+teraz przeskoczy³ na OOP: http://10.10.5.62:5000  -> ood.html
+http://10.10.5.62:5000/ood#1
+
+
+Teraz glêdzi o OOP, robieniu klas, dziedziczeniu, wrzucaniu gdzieb¹dŸ. 
+Jeden coœ zrobi, wrzuci gdzieœ, nie powie drugiemu, ale udaje, ¿e tak mia³o byæ. 
+
+Dobrze zaprojektowany kod jest sztuk¹, nie tylko dziobaniem kodu. Dobry programista to artysta. 
+
+Powinniœmy mieæ zdolnoœci nadprzyrodzone siêgania w przysz³oœæ, ¿eby dziœ napisac coœ, co jutro bêdzie ³atwo zmieniæ gdy pojawi¹ sie nowe wymagania. 
+A wszystko trzeba robic na dziœ. 
+
+Leonardo da Vinci Monê Lise wozi³ ze sob¹ i ci¹gle poprawia³ przez 30 lat. Nie musia³ jej zaraz sprzedaæ i koñczyæ na szybko. 
+A po sprzeda¿y np ksiêciunio stwierdzi³by, ¿e oczy mu siê nie podobaj¹ i ma przemalowac na zielono. 
+
+Kod trzeba pisac teraz szybko, trudno przewidywaæ przysz³e wymagania, i zabezpieczaæ siê ju¿ dziœ. 
+Nie kombinujemy - piszmy jak najprostszy kod, bo a mo¿e sie przyda kiedyœ....
+napewno siê nie przyda i póxniej sie nie wypl¹czemy. Nie kombinowaæ!
+
+
+Niskie metryki we flogach itp wcale nie oznaczaj¹, ¿e kod jst dobrze zaprojektowany, mo¿na oszukiwaæ. 
+
+Nastêpny wyk³ad: 
+
+Design principles

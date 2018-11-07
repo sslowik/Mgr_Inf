@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Ruby Classes 101</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Design Principles
+
+---
+
+## The Act of Design
+
+With the discovery and propagation of common design principles and patterns,
+all OOD problems would appear to have been solved.
+
+### Question?
+
+Now that the underlying rules are known, **how hard can designing
+object-oriented software be?**
+
+---
+
+## How Design Fails
+
+The first way design fails is due to lack of it.
+
+Programmers initially know little about design.
+
+This is not a deterrent, however, as it is possible to produce
+working applications without knowing the first thing about design.
+
+---
+
+### Note about Ruby
+
+This is true of any OO language, but some languages are more susceptible than others,
+and an approachable language like **Ruby** is especially vulnerable.
+
+**Ruby is very friendly.**
+
+The language permits nearly anyone to create scripts to
+automate repetitive tasks, and an opinionated framework
+like Ruby on Rails puts web applications within every
+programmer’s reach.
+
+The syntax of the Ruby language is so gentle that anyone blessed with the ability to string
+thoughts into logical order can produce working applications.
+
+**Programmers who know nothing about object-oriented design
+can be very successful in Ruby.**
+
+---
+
+## Apps that carry the seeds of their own destruction
+
+1. Yes, I can add that feature, **but it will break everything**.<br>
+  _Undesigned_
+1. No, I can’t add that feature; **it wasn’t designed to do that**.<br>
+  _Overdesigned_
+1. Well, I can certainly write this, **but it’s not what you**<br>
+   **really want and you will eventually be sorry**.<br>
+   _Lack of feedback loop_
+
+---
+
+## When to Design
+
+**If Agile is correct**, two other things are also true.
+
+First, there is absolutely no point in doing a Big Up Front
+Design (BUFD) (because it cannot possibly be correct).
+
+Second, no one can predict when the application will be done
+(because you don’t know in advance what it will eventually do).
+
+---
+
+class: center, middle
+
+# SOLID Code
+
+---
+
+### Designing Classes/Methods with a Single Responsibility
+
+The foundation of an object-oriented system is **the message**,
+but the most visible organizational structure is **the class**.
+
+### Design Goals
+
+Your goal is to model your application, using classes,
+such that it does what it is supposed to do **right now** and
+is also easy to change **later**.
+
+---
+
+## Deciding What Belongs in a Class
+
+The problem is not one of ***technical knowledge*** (**implementation**)
+but of ***organization***.
+
+You know how to write the code but not where to put it.
+
+---
+
+## Grouping Methods into Classes
+
+Despite the importance of correctly grouping methods into classes,
+at this early stage of your project you cannot possibly get it right.
+
+### You will never know less than you know right now.
+
+---
+
+## Organizing Code to Allow for Easy Changes
+
+Define *easy to change* as:
+
+* changes have no unexpected side effects,
+
+* small changes in requirements require correspondingly small changes in code,
+
+* existing code is easy to reuse,
+
+* the easiest way to make a change is to add code that in itself is easy to change
+
+---
+
+## TRUE – code you should write
+
+* **Transparent**<br>
+  The consequences of change should be obvious in the code
+  that is changing and in distant code that relies upon it.
+
+* **Reasonable**<br>
+  The cost of any change should be proportional to the benefits the change achieves.
+
+* **Usable**<br>
+  Existing code should be usable in new and unexpected contexts.
+
+* **Exemplary**<br>
+  The code itself should encourage those who change it to perpetuate these qualities.
+
+---
+
+# Creating Classes That Have a Single Responsibility
+
+TODO: Prepare interesting examples.
+
+
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true,
+        highlightSpans: true
+      });
+    </script>
+  </body>
+</html>

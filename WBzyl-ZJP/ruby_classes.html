@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Ruby Classes 101</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Ruby Classes 101
+
+---
+```sh
+$ gem install pry pry-doc
+$ pry
+```
+```ruby
+class A
+  def initialize(x, y)
+    @x = x
+    @y = y
+  end
+end
+
+a = A.new
+
+a.class
+A.class # ?!
+
+A.ancestors
+A.class.ancestors
+```
+---
+
+### Working on Pry console
+
+```ruby
+ls
+cd Hash
+ls
+ls -M
+ls -Mp --grep ^pa
+ls -h
+cd ..
+
+ls -m Hash.new
+ls -M Hash
+
+Hash.new.methods.length
+
+help
+
+ri String#match        # in B&W
+show-doc String#match  # in full colour
+
+show-doc Object#extend
+```
+---
+
+```ruby
+class A
+  def hello
+    puts "Hello from klass A!"
+  end
+end
+
+a.methods
+A.methods
+
+A.instance_methods
+A.instance_methods(false)
+```
+---
+
+### An example: Fox < Animal
+
+```ruby
+class Animal
+  attr_accessor :health
+
+  def initialize
+    @health = 0
+  end
+end
+```
+---
+
+```ruby
+class Fox < Animal
+  def self.breeds
+    ['snow fox', 'desert fox']
+  end
+
+  def initialize
+    super
+    @health += 5
+  end
+
+  def eat(food)
+    @health += likes_food?(food) ? 5 : 1
+  end
+
+  def bark
+    puts 'wrrrr' if @health > 0
+    @health -= 1
+  end
+
+  private
+
+  def likes_food?(food)
+    food == 'chunky bacon'
+  end
+end
+```
+---
+
+### Something to MixIn
+
+```ruby
+module Invisibility
+  def hide
+    @visible = false
+  end
+
+  def show
+    @visible = true
+  end
+end
+
+class Fox
+  attr_accessor :visible
+  include Invisibility
+end
+
+animal = Animal.new
+print "newborn animal health: #{animal.health}\n"
+
+fox = Fox.new
+print "newborn fox health: #{fox.health}\n"
+fox
+
+fox.hide
+fox
+```
+
+---
+
+class: center, middle
+
+# Procedural Code Example
+
+[visualize_ruby](https://github.com/zeisler/visualize_ruby) →
+transform code into a flowchart<br>
+and experimentally trace the execution path through it
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true,
+        highlightSpans: true
+      });
+    </script>
+  </body>
+</html>

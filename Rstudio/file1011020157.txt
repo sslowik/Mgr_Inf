@@ -1,0 +1,68 @@
+5)
+
+ludnosc <- read.csv("C:/Users/cp24/Downloads/ludnosc.csv")
+plot(ludnosc$Rok,ludnosc$Gdansk, type="l", col="red", xlab="Lata", ylab="Liczba ludnosci [w tys.]", main="Ludnosc w miastach w Polsce")
+lines(ludnosc$Rok,ludnosc$Poznan, col="blue")
+lines(ludnosc$Rok, ludnosc$Szczecin, col="green")
+legend("topleft", legend=c("Gdansk", "Poznan", "Szczecin"), col=c("red", "blue", "green"), cex=0.7, lty=1:1)
+
+
+2)
+
+> osoby <- read.csv("C:/Users/cp24/Downloads/osoby.csv")
+>   View(osoby)
+> osoby$wyplata=0
+> osoby$wyplata = runif(length(osoby$wyplata), min=2000, max=5000)
+> newRow <- data.frame(nazwisko="Kowalski", imie="Jan", plec="m", wiek="30", wyplata="3000")
+> osoby <- rbind(osoby, newRow)
+> View(osoby)
+> write.csv(osoby, "osoby3.csv")
+
+3, 4)
+
+sumuj <- function(a,b){
+  s <- a+b
+  return(s)
+}
+losuj <- function(c, d){
+  if(d > c){
+    s <- runif(1, min=c, max=d)
+  } else {
+    s <- runif(1, min=d, max=c)
+  }
+  return(s)
+}
+standaryzuj <- function(v){
+  avg <- sum(v)/length(v)
+  dev <- sd(v)
+  for(i in 1:length(v)){
+    v[i] <- (v[i] - avg) / dev
+  }
+  return(v)
+}
+
+normalizuj <- function(v){
+  for(i in 1:length(v)){
+    v[i] = (v[i] - min(v)) / (max(v) - min(v))
+  }
+  return(v)
+}
+
+wyszukaj <- function(v, x){
+  counter <- 0
+  for(i in 1:length(v)){
+    if(v[i] > x){
+      counter <- counter + 1
+    }
+  }
+  return(counter)
+}
+
+zad 4? 
+
+wyszukaj1 <- function(v, x){
+  u <- length(v[v > x])
+  return(u)
+}
+
+#wyszukaj1(c(9, 78, 1, 10, 2), 6)

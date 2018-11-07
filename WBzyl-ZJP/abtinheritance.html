@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <title>Dziedziczenie</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code {
+        font-family: 'Ubuntu Mono', monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Acquiring behavior thru inheritance
+
+## Chapter 6, POODR2
+
+### [source code for the examples from the book](https://github.com/skmetz/poodr2)
+
+---
+
+## Understanding Classical Inheritance
+
+* Inheritance is, at its core, **a mechanism for automatic message delegation**.
+* It defines a forwarding path for not-understood messages.
+* It creates relationships such that, if one object cannot respond
+  to a received message, it delegates that message to another.
+
+---
+
+## Other Inheritance Techniques
+
+1. JavaScript has prototypical inheritance.
+
+1. Ruby has modules which also provide a way to share
+code via automatic delegation of messages.
+
+---
+
+## FastFeet sp. z o.o. leads road bike trips
+
+```ruby
+class Bicycle
+  attr_reader :size, :tape_color
+
+*  def initialize(**opts)
+*    @size       = opts[:size]
+*    @tape_color = opts[:tape_color]
+*  end
+
+  # every bike has the same defaults for
+  # tire and chain size
+  def spares
+    {
+      chain:        '11-speed',
+      tire_size:    '23',
+      tape_color:   tape_color
+    }
+  end
+end
+
+bike = Bicycle.new(size: 'M', tape_color: 'red')
+
+puts bike.size # => M
+
+puts bike.spares # => {:chain=>"11-speed", :tire_size=>"23", :tape_color=>"red"}
+```
+
+---
+
+## Change
+
+### Imagine that FastFeet begins to lead _mountain bike_ trips.
+
+The new **front_shock** and **rear_shock** variables hold
+mountain bike–specific parts.
+
+---
+
+## Embedding Multiple Types
+
+```ruby
+class Bicycle
+  attr_reader :style, :size, :tape_color,
+              :front_shock, :rear_shock
+
+  def initialize(**opts)
+    @style       = opts[:style]
+    @size        = opts[:size]
+    @tape_color  = opts[:tape_color]
+    @front_shock = opts[:front_shock]
+    @rear_shock  = opts[:rear_shock]
+  end
+
+  # checking 'style' starts down a slippery slope
+  def spares
+    if style == :road
+      { chain:       '11-speed',
+        tire_size:   '23',       # milimeters
+        tape_color:  tape_color }
+    else
+      { chain:       '11-speed',
+        tire_size:   '2.1',      # inches
+        front_shock: front_shock }
+    end
+  end
+end
+```
+
+---
+
+## cont. with _antipattern_
+
+```ruby
+bike = Bicycle.new(
+  style: :mountain,
+  size: 'S',
+  front_shock: 'Manitou', rear_shock: 'Fox')
+
+puts bike.spares
+# => {:chain=>"11-speed", :tire_size=>"2.1", :front_shock=>"Manitou"}
+
+bike = Bicycle.new(
+  style: :road,
+  size: 'M',
+  tape_color: 'red')
+
+puts bike.spares
+# => {:chain=>"11-speed", :tire_size=>"23", :tape_color=>"red"}
+```
+
+<!--
+If you write careless code where
+
+* the last option is the default (as does the code above),
+  an unexpected style will do something but perhaps not what you expect.
+* Also, the spares method started out containing embedded default strings;
+  some of these strings are now duplicated on each side of the if statement.
+
+The size method still works, spares generally works, but the parts methods are
+now unreliable. It’s impossible to predict, for any specific instance of
+Bicycle, whether a specific part has been initialized.
+
+# https://en.wikipedia.org/wiki/List_of_bicycle_types
+
+bike = Bicycle.new(
+  style: :touring,
+  size: 'L',
+  rear_shock: 'Fox')
+
+-->
+
+---
+
+## cont. with _antipattern_
+
+**Bicycle now has more than one *responsibility***, contains things that might
+change for different reasons, and cannot be reused as is.
+
+This code contains an **if** statement that checks **an attribute that holds the
+category of self** to determine what message to send to **self**.
+
+The style variable effectively divides instances of **Bicycle** into two
+different kinds of things.
+
+These two things share a great deal of behavior but differ along the style
+dimension.
+Some of Bicycle’s behavior applies to all bicycles, some only to road
+bikes, and some only to mountain bikes. This single class contains several
+different, but related, types.
+
+### This is the exact problem that inheritance solves: that of highly related types that share common behavior but differ along some dimension.
+
+---
+
+## Multiple v. Single Inheritance
+
+If more than one of its parents implements the message, which implementation has
+priority? As you might guess, things get complicated quickly.
+
+Many object-oriented languages sidestep these complications by providing single
+inheritance, whereby a subclass is allowed only one parent superclass.
+
+Ruby/Java does this; it has single inheritance. A superclass may have many
+subclasses, but each subclass is permitted only one superclass.
+
+---
+
+## Message forwarding via classical inheritance takes place between classes
+
+Even if you have never explicitly created a class hierarchy of your own, you use
+inheritance.
+
+When you define a new class but do not specify its superclass, Ruby
+automatically sets your new class’s superclass to **Object**.
+
+Every class you create is, by definition, a subclass of something.
+
+See p. 113, POODR2, Figure 6.3 for an example.
+
+The fact that unknown messages get delegated up the superclass hierarchy implies
+that subclasses are everything their superclasses are, plus **more**.
+
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        highlightLines: true,
+        highlightSpans: true
+      });
+    </script>
+  </body>
+</html>

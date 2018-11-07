@@ -1,0 +1,69 @@
+Zaawansowane jêzyki programowania / Prof. W³odzimierz Bzyl 
+
+20181013 
+
+has³o na dziœ i ca³y semestr: GOOD PROGRAMMING
+
+
+0. poda³ repo GitHub.com/zjprog/2018
+
+1. zespo³y projektowe w tworzeniu oprogramowania
+
+2. najczêœciej jêzyki obiektowe
+
+3. czym jest klasa czysta
+   single responsivity - klasa powinna dotyczyæ jednej rzeczy, a nie mieszaæ pojêcia
+
+4. testowanie powinno byæ?  
+
+5. Co to znaczy ¿e kod jest czysty? 
+   - potrzebny wspó³czesny system kontroli wersji (np. git), dostêpny od 2005/2006 oko³o
+
+6. z za³o¿eñ biznesowych wynika np zakres testowania i scenariusze
+
+7. Gdy nie ma testów - kó³eczko TDD siê zatrze :)
+   poleca ->    Sandi Metz - jakaœ fajna autorka maj¹ca podejœcie biznesowe 
+                https://www.sandimetz.com/blog/2017/9/13/breaking-up-the-behemoth   -> cumulative functionality wykres
+                           w pliku linki do repozytoriów do CodeClimate.com  - gdzie mo¿na testowaæ po za³o¿eniu konta
+                                https://codeclimate.com/github/discourse/discourse/trends/churn
+                            
+
+8. projekty które koñcz¹ siê poni¿ej stycznej good design i no design -> przyk³ad to projekty studenckie (wykres z sandi .//behemoth )
+
+9. Dlaczego wyk³ad o Good Design jest w kontekœcie jêzyków obiektowych? (Java, Ruby, Python) <- to te¿ w Behemoth Sandi Metz
+
+   -> jak zmierzyæ czy procedura jest prosta? - np. ma mniej niz np 6 linijek (w Ruby tak sie przyjmuje) 
+
+   w miarê komplikowania procedury tracimy czytelnoœæ
+
+10. reposy: https://github.com/zeisler/visualize_ruby   - przyk³ad komplikacji procedur - bêdziemy u¿ywaæ na zajêciach
+
+11. Prof Knut uwa¿any za Boga - stworzy³ pierwszy opensourceowe œrodowisko do sk³adu
+    -> mówi³, ¿e jego kod jest jak sieæ paj¹ka - drgania siê rozchodz¹ po ca³oœci a paj¹k je wyczuwa i wie, gdzie poprawiæ
+
+12. zmiany w projekcie obiektowym: 
+
+    O      O
+        O
+      O    O
+
+obiekty komunikuj¹ siê ze sob¹. Rozumiej¹ komunikaty, reaguj¹. 
+         -> w momencie zmiany dochodza nowe obiekty - i mog¹ zaburzaæ komunikacjê 
+              -> dobrze jest dodaæ nowy blok obiektów, które nie zaburz¹ sieci po³¹czeñ, tylko stanowi pewn¹ ca³oœæ powi¹zañ
+           O  
+            \   O
+             X /
+            / O  
+           O   \ 
+                O
+               / \
+              O-- O
+
+
+ Realnie - oprogramowanie wprowadzamy na szybko, zabezpieczamy siê testami, ale testy s¹ te¿ robione na szybko. 
+
+13. https://codeclimate.com/github/discourse/discourse/trends/churn
+     -> obrazek pokazuj¹cy wzrost trudnoœci w utrzymaniu kodu w zale¿noœci od czêstotliwoœci zmian (Maintanability/Churn)
+          plik powy¿ej skali Worse nale¿a³oby sprowadziæ w dó³ !!!
+         
+14. Na etapie Refaktoringu nie pozwalamy sobie na dodawanie kodu, zajmujemy siê jakoœci¹ tego, co ju¿ mamy
