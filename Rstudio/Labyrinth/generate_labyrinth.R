@@ -4,11 +4,26 @@ lab_size <- as.integer(readline(prompt = "Podaj rozmiar labiryntu:"))
 
 labyrinth <- generate_lab(lab_size)
 
-set_exit <- function(x) {x[nrow(x),ncol(x)] <- 0 ;x}
+labyrinth[nrow(labyrinth),ncol(labyrinth)] <- 0
 
+round
+set_exit <- function(x) {x[nrow(x),ncol(x)] <- 0 ;x}
 set_exit(labyrinth)
+labyrinth[10,10] <- 0
+          
+labyrinth[2,10] <- 0
+round(1.49)
+
+
+clear_start_and_exit <- function(x) {x[nrow(x),ncol(x)] <- 0 ; x[1,1] <- 0}
+clear_start_and_exit(labyrinth)
+
+labyrinth[5:6,8] <- 1; labyrinth
+labyrinth
+
 
 path_length <- lab_size * 4 
+lab_size
 
 
 # from genalg
@@ -16,42 +31,71 @@ path_length <- lab_size * 4
 install.packages('genalg')
 library('genalg')
 
-
+labyrinth
   
-chromo <- round(runif(path_length,1,4), 0)
+chromo <- round(runif(path_length*2,0,1), 0)
 chromo
 
+path_length
 
-current_row <- 1
-current_column <- 1
 
-for(steps in 1:path_length) { 
+
+#step down - 00
+#step up - 01
+#step right - 10
+#step left - 11
+
+string=chromo
+length(string)
+
+evaluator_f <- function(chr) {
+  current_row <- 1
+  current_column <- 1
+  for(steps in 1:(length(chr)/2)) {
+  
     if 
       (
-      (current_row == 1 && chromo[steps] ==  2) || 
-      (current_row == lab_size && chromo[steps] ==  1) ||
-      (current_column == 1 && chromo[steps] ==  4) ||
-      (current_column == lab_size && chromo[steps] ==  3) ||
-      (steps != 1 && labyrinth[current_row , current_column] == 1)
-      ) 
-    { break
-    } else if (chromo[steps] == 1) {
+      (current_row == 1 && chr[(steps*2-1):(steps*2)] ==  c(0,1)) || 
+      (current_row == length(chr)/4 && chr[(steps*2-1):(steps*2)] ==  c(0,0)) ||
+      (current_column == 1 && chr[(steps*2-1):(steps*2)] ==  c(1,1)) ||
+      (current_column == length(chr)/4 && chr[(steps*2-1):(steps*2)] ==  c(1,0))
+      ) { break
+    } else if (chr[(steps*2-1):(steps*2)] == c(0,0)) {
       (current_row <- current_row +1) 
-    } else if (chromo[steps] == 2) { 
+    } else if (chr[(steps*2-1):(steps*2)] == c(0,1)) { 
       (current_row <- current_row - 1) 
-    } else if (chromo[steps] == 3) { 
+    } else if (chr[(steps*2-1):(steps*2)] == c(1,0)) { 
       (current_column <- current_column + 1)
-    } else if (chromo[steps] == 4) {
+    } else if (chr[(steps*2-1):(steps*2)] == c(1,1)) {
       (current_column <- current_column - 1)
-  }  
+    }
+  }
+  return(length(chr)/4 - current_column + current_row + (steps/2))
 }
+
+
+genalg_lab <- rbga.bin(size=80, 
+                       popSize=200, 
+                       iters=100, 
+                       mutationChance = 0.1,
+                       elitism=T, 
+                       evalFunc = evaluator_f)
+
+result <- evaluator_f(chromo)
+result
+steps
+
+chromo
+c(1,0)
+steps
+chromo[1:2] == c(1,0)
 
 to_exit <- (lab_size * 2) - (current_column + current_row)
 steps; current_row; current_column; to_exit
 chromo
 labyrinth
 
-chromo[1]=3
+chromo[(steps*2-1):(steps*2)]==c(1,1)
 
 labyrinth[step_down - step_up , step_right - step_left]
 
@@ -82,3 +126,12 @@ evaluate <- function(string=c()) {
   }
   returnVal
 }
+
+
+lab_rbga <- rbga(stringMin = c(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1), 
+     stringMax = c(4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4), 
+     evalFunc=evaluator, verbose=TRUE, mutationChance=0.1, suggestions=NULL,
+     popSize=200, iters=100,elitism=TRUE, monitorFunc=NULL)
+
+summary(lab_rbga)
+lab_rbga
