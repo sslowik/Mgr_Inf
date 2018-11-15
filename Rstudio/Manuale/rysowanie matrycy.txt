@@ -1,0 +1,29 @@
+# rysowanie1 labiryntu  pakiet > pheatmap
+install.packages("pheatmap")
+library(pheatmap)
+
+pheatmap(x, cellwidth = 20, 
+         cellheight = 20, 
+         cluster_row = FALSE, 
+         cluster_col = FALSE, 
+         color=gray.colors(2,start=1,end=0))
+
+
+# rysowanie2 labiryntu  pakiet > gplots
+install.packages("gplots")
+library(gplots)
+
+x
+x <- lab1 
+xval <- formatC(x, format="f", digits=2)
+pal <- colorRampPalette(c(rgb(0.96,0.96,1), rgb(0.1,0.1,0.9)), space = "rgb")
+
+#Plot the matrix
+x_hm <- heatmap.2(x, Rowv=FALSE, Colv=FALSE, dendrogram="none", main="8 X 8 Matrix Using Heatmap.2", xlab="Columns", ylab="Rows", col=pal, tracecol="#303030", trace="none", cellnote=xval, notecol="black", notecex=0.8, keysize = 1.5, margins=c(5, 5))
+
+
+
+#rysowanie3 > lattice
+library(lattice)
+levelplot(x)
+levelp
