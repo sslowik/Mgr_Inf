@@ -83,7 +83,7 @@ genalg_lab1$best
 
 genalg_lab4 <- rbga(stringMin=vMin, stringMax=vMax,
                     suggestions=NULL,
-                    popSize=50, iters=50,
+                    popSize=50, iters=70,
                     mutationChance=0.2,
                     elitism=T,
                     monitorFunc=NULL, evalFunc=evaluate3,
