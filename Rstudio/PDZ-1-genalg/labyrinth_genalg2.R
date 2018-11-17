@@ -1,4 +1,30 @@
-#create the labyrinths 10x10 with borders -> matrix(12:12)
+# define the function to generate random labyrinth of given size (may be insolvable)
+
+lab_size <- as.integer(readline(prompt = "Podaj rozmiar labiryntu:"))
+
+generate_lab <- (function(y) apply(matrix(nrow = y, ncol =y), c(1,2), function(x) sample(c(0,1),1)))
+
+lab_x <- generate_lab(lab_size)
+
+#clear the start and exit 
+{ 
+lab_x[nrow(lab_x),ncol(lab_x)] <- 0; 
+lab_x[1,1] <- 0
+}
+
+#add borders
+
+lab_xx = matrix(data = 1, 
+                nrow = lab_size + 2, 
+                ncol = lab_size + 2)
+
+# fill the inner part with generated lab
+
+lab_xx[2:11,2:11] <- lab_x
+
+lab4 <- lab_xx
+
+#create the matrix for given labyrinths 10x10 and add borders (result is matrix(12:12) )
 
 lab1 <- matrix(nrow=12,ncol=12)
 lab1[1,] <- 1; lab1[12,] <- 1; lab1[,1] <- 1; lab1[,12] <- 1
@@ -43,6 +69,8 @@ lab1[11,2:11] <- c(0,1,0,0,0,0,0,0,0,0)
 labyrinth <- lab1
 labyrinth <- lab2
 labyrinth <- lab3
+labyrinth <- lab4
+labyrinth <- lab5
 
 # set the size of the labyrinth, according to it's actual dimensions
 lab_size <- nrow(labyrinth) - 2; lab_size
@@ -60,8 +88,21 @@ pheatmap(labyrinth, cellwidth = 20,
          cluster_col = FALSE, 
          color=gray.colors(2,start=1,end=0))
 
+pheatmap(lab5, cellwidth = 20, 
+         cellheight = 20, 
+         cluster_row = FALSE, 
+         cluster_col = FALSE, 
+         color=gray.colors(2,start=1,end=0))
 
-# save the labyrinth as .pdf file
+# correct the labyrinth manually if needed :)
+
+labyrinth[8,9] <- 0
+
+#save corrected labyrinth if needed
+lab4 <- labyrinth
+
+
+# You can save the labyrinth as .pdf file
 {
 pdf(file = "labyrinth.pdf", 
     width=5,
@@ -69,8 +110,6 @@ pdf(file = "labyrinth.pdf",
     paper='a4', 
     pagecentre = T, 
     onefile = F) 
-
-"My labyrinth";
 
 pheatmap(labyrinth, cellwidth = 20, 
          cellheight = 20, 
@@ -80,7 +119,6 @@ pheatmap(labyrinth, cellwidth = 20,
 
 dev.off()
 }
-
 
 
 # evaluation function
@@ -136,7 +174,7 @@ vMin <- rep(0.51, lab_size * 4); vMax <- rep(4.49, lab_size * 4)
 install.packages("genalg")
 library(genalg)
 
-genalg1_labyrinth <- rbga(stringMin=vMin, stringMax=vMax,
+genalg4_labyrinth <- rbga(stringMin=vMin, stringMax=vMax,
                     suggestions=NULL,
                     popSize=lab_size*10, iters=lab_size*10,
                     mutationChance=0.1,
@@ -144,11 +182,11 @@ genalg1_labyrinth <- rbga(stringMin=vMin, stringMax=vMax,
                     monitorFunc=NULL, evalFunc=evaluate3,
                     showSettings=FALSE, verbose=FALSE)
 
-summary(genalg_labyrinth, echo=T)
+summary(genalg4_labyrinth, echo=T)
 
-plot(genalg_labyrinth)
+plot(genalg4_labyrinth)
 
-genalg_labyrinth$best
+genalg4_labyrinth$best
 
 #evaluate the system time for given genetic algorithm
 
@@ -180,14 +218,14 @@ cat("\n")
 }
 
 
-# create matrix with results for different popsize and iterations number
+# or create matrix with results for different popsize and iterations number
 {
 rbga_results <- (matrix(data = NA, nrow = lab_size, ncol = 6))
 colnames(rbga_results) <- c("pop&iter", "user", "system", "time", '5', '6' )
 
 
 for (i in 1:lab_size) {
-rbga_results[i,] <- c(i, system.time(
+rbga_results[i,] <- c(i * lab_size, system.time(
     rbga(stringMin=vMin, stringMax=vMax,
          suggestions=NULL,
          popSize=lab_size*i, iters=lab_size*i,
@@ -199,4 +237,33 @@ rbga_results[i,] <- c(i, system.time(
 }
 rbga_results
 }
+
+# plot the results 
+plot(rbga_results[,c(1,4)],
+     type = "b", 
+     col = "red",
+     main = "Genethic algorithm efficiency according to population size and iterations number", 
+     xlab = "Population size and iterations number for rbga method"
+     )
+
+# save diagram to pdf file
+
+{
+  pdf(file = "genalg_results.pdf", 
+#      width=6,
+      height=4,
+      paper='a4r', 
+      pagecentre = T, 
+      onefile = F) 
+  
+  plot(rbga_results[,c(1,4)],
+       type = "b", 
+       col = "red",
+       main = "Genalg efficiency according to population size and iterations number", 
+       xlab = "Population size and iterations number for rbga method"
+  )  
+  
+dev.off()
+}
+
 
