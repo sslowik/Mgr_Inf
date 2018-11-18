@@ -1,3 +1,9 @@
+﻿https://github.com/emilybache/GildedRose-Refactoring-Kata
+
+znalazem coś takiego: 
+http://codingdojo.org/kata/GildedRose/
+
+
 1. sklonowac repo w wybranym jezyku
 2. dopisac testy dla innych przedmiotów
 3. uruchomic i zbadac czy asercje sie pojawiaja
@@ -11,4 +17,40 @@ można skorzystać z kodu w c i przepisac na swój kod, albo skorzystac z dokume
 
 Musimy mieć kilkadziesiąt linijek kodu, żeby na jego podstawie coś poprawiac. 
 
+
+
+
+Sulfuras są bezcenne i nie chca ich sprzedać, więc warto podać test z zaporową ceną sprzedaży
+
+
+10 testów, max 20
+
+uruchamiany testy na istniejącym kodzie, przechodzą czy failują? 
+
+4. dopisujemy nowy item i sprawdzamy ponownie.
+
+
+
+przykłady testów w C
+
+https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/master/C/GildedRoseTextTests.c 
+
+gdzieś jest strona z gotowcem gdzie tylko wystarczy wpisac kod: 
+
+albo to: 
+http://cyber-dojo.org/setup_default_start_point/show/?from=individual
+
+albo to: 
+https://bettercodehub.com/repositories
+
+Na następne zajęcia mamy przetestowac kod u siebie albo na hubie i stwierdzić, co nie działało. 
+
+Puścić testy, część powinna przechodzić, a 2-3 dla porzuconych przedmiotów powinna się zepsuć. 
+
+TESTY POWINNY BYĆ TAK NAPISANE, ŻEBY NAWET DZIECKO JE ZROZUMIAŁO. 
+KOD MAKSYMALNIE PROSTY, KAŻDA LINIJKA NOWYM PRZYKŁADEM
+
+WSZYSTKIE REGUŁY Z ZAJĘĆ Z FLOGA PRZESTAJĄ PRZY TESTACH OBOWIĄZYWAĆ. 
+
+TESTY POWINNY BYĆ OTWARTE NA DOPISYWANIE, TAK ŻEBY NIE ZASTANAWIAJĄC SIĘ NAD ICH SKŁĄDNIĄ MÓC ŁĄTWO DOPISAC KOLEJNY PRZYPADEK
 
