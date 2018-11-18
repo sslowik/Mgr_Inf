@@ -1,6 +1,14 @@
 1. sklonowac repo w wybranym jezyku
-2. dopisac testy dla innych przedmiot體
+2. dopisac testy dla innych przedmiot贸w
 3. uruchomic i zbadac czy asercje sie pojawiaja
 
-nalezy dodac testy (liste item體 i odpalic w wybranyn jezyku)
+nalezy dodac testy (liste item贸w i odpalic w wybranyn jezyku)
+
+
+potem kod nalezy zmieni膰, poprawi膰, 偶eby dzia艂a艂 lepiej.
+
+mo偶na skorzysta膰 z kodu w c i przepisac na sw贸j kod, albo skorzystac z dokument贸w kt贸re przedstawi艂 Pan Profesor. 
+
+Musimy mie膰 kilkadziesi膮t linijek kodu, 偶eby na jego podstawie co艣 poprawiac. 
+
 
