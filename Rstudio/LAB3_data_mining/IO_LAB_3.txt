@@ -1,0 +1,197 @@
+ZAD 1
+
+nrow(subset(dirty_iris, is.finite(Sepal.Length) & is.finite(Sepal.Width) & is.finite(Petal.Length) & is.finite(Petal.Width)))
+
+E <- editset(c(
+    "Sepal.Length <= 30", 
+    "Sepal.Length > Petal.Length", 
+    "Petal.Length > 2* Petal.Width", 
+    "Sepal.Length > 0",  
+    "Sepal.Width > 0", 
+    "Petal.Length > 0",  
+    "Petal.Width > 0", 
+    "Species %in% c('setosa', 'versicolor', 'virginica')")
+    )
+
+ZAD 2
+
+install.packages("deducorrect")
+library("deducorrect")
+
+#trzeba umiescic w pliku tekstowym np correction.txt
+#POCZATEK
+if(Petal.Width <= 0 & !is.na(Petal.Width))
+{
+  Petal.Width <- NA
+}
+
+if(Sepal.Width <= 0 & !is.na(Sepal.Width))
+{
+  Sepal.Width <- NA
+}
+
+if(Petal.Length <= 0 & !is.na(Petal.Length))
+{
+  Petal.Width <- NA
+}
+
+if(Petal.Length <= 0 & !is.na(Petal.Length))
+{
+  Petal.Length <- NA
+}
+
+if(Species != "setosa" & Species != "versicolor" & Species != "virginica")
+{
+  Species <- NA
+}
+
+if(Sepal.Length <= 30 & !is.na(Sepal.Length))
+{
+  Sepal.Length <- NA
+}
+
+if(!is.na(Sepal.Length) & !is.na(Petal.Length) & Sepal.Length > Petal.Length)
+{
+  Sepal.Length <- NA
+  Petal.Length <- NA
+}
+
+if(!is.na(Petal.Length) & !is.na(Petal.Width)
+& Petal.Length <= 2 * Petal.Width)
+{
+  Petal.Length <- NA
+  Petal.Width <- NA
+}
+#KONIEC
+
+
+R <- correctionRules("correction.txt")
+
+dirty_iris[86, 4] = 2.0
+correctWithRules(R, dirty_iris)
+
+
+ZAD 3
+
+a)
+
+MeanImpute <- function(dataset, column_number)
+{
+  sum <- 0
+  quantity <- 0
+  for(i in 1:nrow(dataset))
+  {
+    if(!is.na(dataset[i, column_number]))
+    {
+      sum = sum + dataset[i, column_number]
+      quantity = quantity + 1
+    }
+  }
+  mean = sum/quantity
+  
+  for(i in 1:nrow(dataset))
+  {
+    if(is.na(dataset[i, column_number]))
+    {
+      dataset[i, column_number] <- mean
+    }
+  }
+  return(dataset)
+}
+
+
+i1 <- MeanImpute(dirty_iris, 1)
+i2 <- MeanImpute(i1, 2)
+i3 <- MeanImpute(i2, 3)
+clean.iris.mean <- MeanImpute(i3, 4)
+
+b)
+
+install.packages("VIM")
+library(VIM)
+clean.iris.knn <- kNN(dirty_iris)
+
+ZAD 4
+
+
+b)
+
+LogarithmDataSet <- function(dataset)
+{
+  n <- nrow(dataset)
+  for(i in 1:4)
+  {
+    for(j in 1:n)
+    {
+      dataset[j, i] <- log(dataset[j, i])
+    }
+  }
+  return(dataset)
+}
+
+clean.iris.mean[16, 2] = 2.0
+
+iris.log <- LogarithmDataSet(clean.iris.mean)
+
+c)
+
+ScaleDataSet <- function(dataset)
+{
+  for(i in 1:4)
+  {
+    dataset[,i] <- scale(dataset[,i], 1, 1)
+  }
+  return(dataset)
+}
+
+iris.log.scale <- ScaleDataSet(iris.log)
+
+#wycinanie wartosci INF z tabeli (wziely sie tam z dupy)
+iris.log.scale[43, 1] = 0.5
+iris.log.scale[79, 3] = 0.5
+iris.log.scale[130, 2] = 0.5
+
+ZAD 5
+
+a) iris.log.scale$Species <- NULL
+b) iris.pca <- prcomp(iris.log.scale)
+c) iris.predict <- predict(iris.pca)
+
+Pytania; PC1 i PC2 maja najwieksze odchylenie
+iris.pca[1] zwraca wektor odchylen standardowych dla kazdej ze skladowych
+iris.pca[2] zwraca macierz rotacji, iris.pca[2]$rotations chyba tak samo
+
+
+iris.predict.converted <- as.data.frame(iris.predict)
+iris.predict.converted$PC3 <- NULL
+iris.predict.converted$PC4 <- NULL
+iris.predict.converted$Species <- iris.log$Species
+
+ZAD 6
+
+IrisX <- c()
+IrisY <- c()
+
+ParseDataSet <- function(dataset, name)
+{
+  n <- nrow(dataset)
+  for(i in 1:nrow(dataset))
+  {
+    if(dataset[i, 3] == name)
+    {
+      IrisX <- c(IrisX, dataset[i, 1])
+      IrisY <- c(IrisY, dataset[i, 2])
+    }
+  }
+  set <- data.frame("x"=IrisX, "y"=IrisY)
+  return(set)
+}
+
+setosa <- ParseDataSet(iris.predict.converted, "setosa")
+versicolor <- ParseDataSet(iris.predict.converted, "versicolor")
+virginica <- ParseDataSet(iris.predict.converted, "virginica")
+
+plot(setosa$x, setosa$y, col="red", xlab="PC1", ylab="PC2")
+points(virginica$x, virginica$y, col="blue")
+points(versicolor$x, versicolor$y, col="green")
+legend("topleft", legend=c("setosa", "virginica", "versicolor"), col=c("red", "blue", "green"), cex=0.7, lty=1:1)
