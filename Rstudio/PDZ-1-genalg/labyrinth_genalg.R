@@ -70,26 +70,27 @@ lab_size <- nrow(labyrinth) - 2; lab_size
 # was less efficient with this approach (more generations needed to resolve problem)
 
 evaluate3 <- function(string=c()) {
+
   x <- 2; 
   y <- 2; 
-  exit_coordinates <- lab_size * 2 + 2; 
-  returnVal3 <- exit_coordinates;
+  exit_coordinates_sum <- lab_size * 2 + 2; 
+  returnVal3 <- exit_coordinates_sum;
   
-  for(step in 1:40) { if (x==11 & y==11) { returnVal2 = 0; break
+  for(step in 1:length(string)) { if (x==lab_size + 1 & y==lab_size + 1) { returnVal2 = 0; break
   } else if (round(string[step],0)==1 & labyrinth[x-1,y]==0) { x <- (x - 1)	
   } else if (round(string[step],0)==2 & labyrinth[x+1,y]==0) { x <- (x + 1) 
   } else if (round(string[step],0)==3 & labyrinth[x,y+1]==0) { y <- (y + 1) 
   } else if (round(string[step],0)==4 & labyrinth[x,y-1]==0) { y <- (y - 1) 
   } else next 
   }
-  returnVal3 <- (exit_coordinates - x - y); 
+  returnVal3 <- (exit_coordinates_sum - x - y); 
   returnVal3
 }	
 
 # set the min and max values for the genes of float chromosome
 # for rbga function 
 
-vMin <- rep(0.51, lab_size * 6); vMax <- rep(4.49, lab_size * 6)
+vMin <- rep(0.51, lab_size * 4); vMax <- rep(4.49, lab_size * 4)
 
 # install package "genalg" and execute rbga function for given labyrinth 
 # and evaluate3 fitness function
@@ -134,7 +135,7 @@ genalg2_labyrinth$best
 system.time(
   rbga(stringMin=vMin, stringMax=vMax,
        suggestions=NULL,
-       popSize=lab_size*10, iters=lab_size*10,
+       popSize=200, iters=200,
        mutationChance=0.1,
        elitism=T,
        monitorFunc=NULL, evalFunc=evaluate3,
