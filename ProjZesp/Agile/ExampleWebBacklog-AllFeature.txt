@@ -1,0 +1,303 @@
+Backlog example
+
+Scrum Alliance Website
+https://www.mountaingoatsoftware.com/agile/scrum/scrum-tools/product-backlog/example
+
+
+The following example user stories were written to describe the functionality in an early version of the Scrum Alliance website. These stories were written in early 2004. Some stories are good, some aren’t. I’m providing the full set of them, though, as an indication of what I considered a suitable starting point product backlog for this site back then. In a couple of places I’ve added notes in brackets.
+
+Profiles
+
+As a site member, I want to describe myself on my own page in a semi-structured way so that others can learn about me. That is, I can fill in predefined fields, but also have room for a free-text field or two. (It would be nice to let this free text be HTML or similar.)
+As a site member, I can fill out an application to become a Certified Scrum Practitioner so that I can earn that designation. [Note: Certified Scrum Practitioner was the initial name of what became known as Certified Scrum Professional.]
+As a Practitioner, I want my profile page to include additional details about me (i.e., some of the answers to my Practitioner application) so that I can showcase my experience.
+As a site member, I can fill out an application to become a Certified Scrum Trainer so that I can teach CSM and CSPO courses and certify others.
+As a Trainer, I want my profile page to include additional details about me (i.e., some of the answers to my Trainer application) so that others can learn about me and decide if I’m the right trainer for them.
+As a Practitioner or Trainer, when I write an article for the site I want a small graphic shown with the article showing my CSP or CST status so that others know my certifications when reading. (For example, Amazon’s “Top 500 Reviewers” approach.)
+As a trainer, I want my profile to list my upcoming classes and include a link to a detailed page about each so that prospective attendees can find my courses.
+As a site member, I can view the profiles of other members so that I can find others I might want to connect with.
+As a site member, I can search for profiles based on a few fields (class attended, location, name) so I can find others I might want to connect with.
+As a site member, I can mark my profile as private in which case only my name will appear so that no one can learn things about me I don’t want shared.
+As a site member, I can mark my email address as private even if the rest of my profile is not so that no one can contact me.
+As a site member, I can send an email to any member via a form so that we can connect.
+As a site administrator, I can read practicing and training applications and approve or reject them so that only applicants who qualify can become CSPs or CSTs.
+As a site administrator, I can edit any site member profile so that I can correct problems for members.
+News
+As a site visitor, I can read current news on the home page so that I stay current on agile news.
+As a site visitor, I can access old news that is no longer on the home page, so I can access things I remember from the past or that others mention to me.
+As a site visitor, I can email news items to the editor, so they can be considered for publication. (Note: this could just be an email link to the editor.)
+As a site a site editor, I can set the following dates on a news item: Start Publishing Date, Old News Date, Stop Publishing Date so articles are published on and through appropriate dates. These dates refer to the date an item becomes visible on the site (perhaps next Monday), the date it stops appearing on the home page, and the date it is removed from the site (which may be never).
+As a site member, I can subscribe to an RSS feed of news (and events?) so I remain sufficiently and easily informed.
+As a site editor, I can assign priority numbers to news items, so I can indicate which articles I want featured most prominently on the site. Note: Items are displayed on the front page based on priority.
+Courses and Events
+As a site visitor, I can see a list of all upcoming “Certification Courses” and can page through them if there are a lot, so I can choose the best course for me.
+As a site visitor, I can see a list of all upcoming “Other Courses” (non-certification courses) and can page through them if necessary, so I can choose the best course for me.
+As a site visitor, I can see a list of all upcoming “Events” so I can decide if I want to attend any. (Events are things such as the Scrum Gathering, conferences, free seminars, etc.)
+As a trainer, I can create a new course or event, so site visitors can see it. Note: This includes the following information: name, description (HTML), trainer names (multiple selection from a list), start date, end date, venue name (HTML) and address, contact name, contact phone, contact email, a link for more information, and a link to register. For a certification course the name of the class is a dropdown list; for others, it is free text.
+As a trainer, when I create an Other Course or Event, I am charged a listing fee for that activity so I don’t list events I don’t really intend to hold.
+As a site administrator, I can create an Other Course (?) or Event that is not charged a listing fee. This is so that the Scrum Alliance doesn’t charge itself for Scrum Gatherings that it puts on.
+As a site administrator, I can set the listing fee per Other Course or Event so that we have flexibility on what (if anything) to charge in the future.
+As a trainer, I can update one of my existing courses or events so that it reflects accurate information.
+As a trainer, I can delete one of my courses or events, so it’s no longer listed if I cancel for some reason.
+As a trainer, I can copy one of my courses or events so that I can create a new one. When copying it I am asked for the date(s) of the new course or event.
+As a site admin, I can delete any course or event, so I can remove things that will no longer occur.
+As a site editor, I can update any course or event so that I can fix things the original author hasn’t.
+As a trainer, admin, or editor, I can turn a course into an event or an event into a course, so I can correctly classify anything that was entered incorrectly.
+As a site visitor, I have an advanced search option that lets me fill in a form of search criteria (country, state, trainer name, date range, word in description, etc.) so I can quickly find what I’m looking for.
+As a site visitor, when I’m viewing a course I can click on the trainer’s name and be taken to the trainer’s profile, so I can read more about a trainer before registering for a course.
+As a site visitor, I can subscribe to an RSS feed of upcoming courses and events so that I’m up to day without having to visit the site.
+FAQs
+As a site visitor, I can read FAQs.
+As a site editor, I can maintain an FAQ section.
+As a site member, I can do a full-text search of the FAQs. (Maybe we want this for any site visitor?)
+
+Resource
+
+As a site member, I can download the latest training material and methodology PDFs so I have them.
+As a visitor, I can download presentations, PDFs, etc. on Scrum so that I can learn from them or use them.
+Jobs
+As a site member (?), I can scroll through a listing of jobs, so I can see if there any I’m interested in. (There won’t be enough at first to justify search fields.)
+As someone who wants to hire, I can post a help wanted ad so that I can attract candidates.
+As a site admin, I need to approve each help wanted ad before it gets to the site so that we’re sure of the quality of jobs being listed. Note: May not be needed long term.
+As a site admin, I am emailed whenever a job is submitted so that I am aware of it and can decide if I want to post it.
+As a site member, I can subscribe to an RSS feed of jobs available so that I can read them without visiting the site.
+As a site admin, I can edit and delete help wanted ads so I can correct small problems or make sure each ad complies with site guidelines.
+As a site admin, I want jobs to stop publishing on the site 30 days after being posted so that jobs that may have been filled aren’t still listed when the hiring party forgets to come back and delete the ad.
+As someone who wants to hire, I want to be able to extend an ad for another 30 days (repeatedly) by visiting the site and updating the posting so that my ad remains active. (Note, I can’t update it 10 times today and extend the posting 300 days today.)
+As someone who has posted an ad that is about to expire, seven days before it expires I want to be emailed a reminder so that I can go extend the ad. (Note: This means the ad could have an expiration date 37 days into the future, which is fine.)
+Articles
+As a site visitor, I want to read a new article on the front page about once a week so that I’m up on all the latest happenings.
+As the site editor, I can include a teaser with each article so that site visitors can decide if they want to read the rest. The teaser shows up on the front page for all to read.
+As a site member who has read a teaser on the front page, I want to read the entire article so that I can finish articles that appeal to me.
+As the site editor, I can add an article to the site so that the site has plenty of content.
+As a site editor, I can set start publishing dates (when teaser appears on front page), old article date (when it disappears from home page), and stop publishing dates (when it's removed from site, if ever) for articles so articles appear only during appropriate periods.
+As a site editor, I want to be able to designate whether or not an article (or for that matter any piece of info) ever makes the home page so that the best content is featured most prominently. Note: Some articles will never be shown on the home page.
+As the site editor, I have pretty good control over how the article looks (include images and captions, for example) so that articles are visually appealing.
+As a site visitor, I want the link from the article teaser to take me directly to the body of the article. not to another teaser setup, so that I can easily finish the article.
+As a site editor, I want to be able to indicate whether an article is publicly available or for members only so that visitors are incentivized to become members.
+As a site visitor, I want to be able to read some of your articles so that I can learn without first joining the site.
+As a site member, I want to have full access to all articles so there is a benefit to being a member.
+As a site visitor, I can do a full-text search of article body, title, and author name so that I can find what I want.
+As a site visitor, I can subscribe to an RSS feed of articles (teasers only?) so that I can read them without visiting the site.
+As a site visitor, I can post comments about articles so that others can read them.
+Home Page
+As a site editor, I want to have a prominent area on the home page where I can put special announcements, not necessarily news or articles, so that I can give them additional exposure.
+As a site editor, I'd like to have some flexibility as to where things appear so as to accommodate different types of content.
+As a trainer, the upcoming courses are what I want visitors to notice so that they register and there’s a benefit to my membership.
+As a site visitor, I want to see new content when I come to the site, so I come back more often.
+As a site visitor, I want to have articles that interest me and are easy to get to, so I come to the site for my agile news and learning.
+As a site visitor, I need to know as soon as I visit what on earth Scrum is, and why it needs an alliance so that I don’t bounce immediately off the page.
+As a site visitor, I want to know as I glance around the home page what on earth a CSM is and why I'd want to be one so that I read more.
+As a site visitor, I want to be able to get back to the home page quickly and easily, so I don’t get lost navigating and so the site works like every other site in the world.
+As a site visitor, I want to see a list of the most popular items on the site so I am most likely to read the most important or best content. (Note: Not everything has to be considered. For example, we don’t need to know the most popular profile, but it would be useful to a have a "most popular" box that listed the most popular articles, news items, or etc.)
+Ratings
+As someone who successfully completed a Certification Course (becoming a Certified ScrumMaster or Certified Scrum Product Owner), I am emailed a link to a survey about the course and instructor, so I can provide feedback on the course.
+As a trainer, I want to be assured that no one can submit the same answers multiple time and skew my results, so my ratings are accurate.
+As a trainer, I am notified about the results of surveys about my classes, so I can read them. (Questions: After each survey? After a set period of time? Does the trainer get an email or just know to go to the site?)
+As a site admin, I can see the results for each trainer and averages for the class (for all trainers), so I can identify any outliers or possible problems.
+As a site visitor who is considering attending a certification course, I want to see a trainer’s rating (either for that course or for all of his or her certification courses combined), so I choose a course from an appropriate trainer.
+As a trainer, I want my rating to show up on my profile page, so site visitors can choose wisely.
+What Is Scrum?
+As a site visitor, I want there to be a section of the website that teaches me the basics of what Scrum is, so I can learn that quickly.
+As a site editor, I can create the content of the What Is Scrum section so that it’s there for visitors.
+
+Registry
+
+As a site visitor, I can view lists on the site of all Certified ScrumMasters, Practitioners, Trainers, and Certified Scrum Product Owners.
+As a CSM, Practitioner, or Certified Scrum Product Owner, I can have my name listed in the registry without becoming a member of the site so that employers or others can verify my certification. (For example, I take a certification class but never register or let my membership lapse.)
+As a trainer who has finished teaching a Certification class, I can load an Excel file (first name, last name, email) into the site so that those course participants are added to the Scrum Alliance records. I am prompted for the trainer names (I may not have trained alone), certification date, and type of certification (i.e., CSM or CSPO). Courses are marked as “pending” until the trainer pays the certification fees.
+As a site admin, I can view all classes in a pending state so that I can approve any that need to be approved.
+As a site admin who has received proof of payment from a trainer, I can move people in his or her class from a pending state to the registry.
+As a new Certified ScrumMaster or Certified Product Owner, once my name has been loaded to the registry I am sent an email welcoming me to the Scrum Alliance and containing instructions on how to register / activate my membership.
+As a site editor, I can edit the content of the email automatically sent to new Certified ScrumMasters and Product Owners so that I don’t need to involve a programmer on simple email edits.
+Membership
+As a company, I can join the Scrum Alliance by paying a corporate membership fee so that I can show the company’s support of Scrum. This will include uploading items related to corporate membership (e.g., company description, a logo of size x by y).
+As a corporate sponsor, my logo is displayed on a “corporate sponsors” page so that others see the company’s support of Scrum.
+As a corporate sponsor I want my logo to randomly appear on the home page so that others see the company’s support of Scrum. (That is, it rotates among other corporate sponsors.)
+As a CSM or CSPO who has been approved for Practitioner status (by a site admin reading my submission), I am charged a fee so that my certification status can be activated.
+As a Certified Scrum Trainer, I can pay an annual fee so that my CST status is active.
+As a site administrator, I can set the annual fees for members, Practitioners and Trainers so that fees can be set without involving a programmer.
+As someone whose membership (of any type) is about to expire, I am sent a reminder and a link so that I can renew.
+As a member with short-term memory problems, I can have the system email me a new password or a password reminder, possibly my username (unless we use email for that), and so on.
+For Trainers Only
+As a trainer, I can read information of relevance only to trainers so that the Scrum Alliance can share information with me easily.
+As a site editor, I can post information in a trainers-only section so that only trainers see it.
+Video Training Website.
+Stories in this section were written for the first version of a website that offered online video training from a variety of instructors.
+
+Course Catalog
+
+As an instructor, I can create a description of a course so that prospective participants can learn about it.
+As an instructor, I can maintain a bio about myself so that it is used on any course listing for which I’m the instructor.
+As a site visitor, I can view a detailed page about each course so that I can learn all about it.
+As a site visitor, I can browse a catalog of all courses available so that I can pick the right one for me.
+As a site visitor, I can see a list of other related courses when viewing a course so that I can see other courses I might be interested in.
+
+Account Management
+
+As an instructor, I can create a description of a course so that prospective participants can learn about it.
+As an instructor, I can maintain a bio about myself so that it is used on any course listing for which I’m the instructor.
+As a site visitor, I can view a detailed page about each course so that I can learn all about it.
+As a site visitor, I can browse a catalog of all courses available so that I can pick the right one for me.
+As a site visitor, I can see a list of other related courses when viewing a course so that I can see other courses I might be interested in.
+Course Creation
+As an instructor, I can upload videos to be part of a course so that participants can watch those videos.
+As an instructor, I can create a quiz to include in a video course so that participants can take those quizzes to ensure they are learning.
+As an instructor, I can properly sequence the elements of course so that I can assemble them into an amazing course.
+As an instructor, I indicate whether a discussion forum is part of a course so that I can add a forum to some but not all courses.
+As an instructor, I can indicate the schedule for a course so that prospective participants and participants can see what course elements will be presented each week and what they’ll be.
+As an instructor, I can set the publication date for course elements (for a scheduled course) so that items become available when I want and not sooner.
+As an instructor, I can add subtitles to any video so that it is more accessible.
+As an instructor, I can set the thumbnail image for each video so that the image is one I like rather than randomly selected.
+As a site owner, I want all videos to be watermarked with a Front Row Agile logo so that the videos are clearly from the Front Row Agile site.
+
+Buying Courses
+
+As a trainer, I can set the prices for my course so that I can make filthy lucre.
+As a trainer, I can set quantity thresholds and discounts so that I can offer lower prices for larger orders such as “buy three, get 10% off”.
+As a trainer, I can create discount codes I can give to people so that I can customize pricing.
+As a site visitor, I can put courses in my shopping cart so that I can purchase them and participate in (watch) them.
+As a site visitor, I can put one chapter of a course in my shopping cart so that I can purchase just a part of a course.
+As a site visitor, I can pay for the courses in my cart with a credit card so that I can purchase them and participate in (watch) them.
+As a site visitor, I can pay for the courses in my cart with PayPal so that I can purchase them and participate in (watch) them.
+As a buyer, I receive a receipt for any course I pay for so that I can prove I paid for it.
+As a participant, I can announce my participation in a course at various times to various social media sites so that I can tell others about what I’m doing.
+As a user, I can view the license terms before purchasing or subscribing so that I know what I’m getting.
+As a participant, I can sign up for a monthly or annual subscription so that I can take all (video?) courses.
+As a company, I can purchase multiple licenses so that I can manage course registrations for a group of people.
+As a company, I manage a set of course registrations so that I can control which employees in my company have access to which courses.
+As a company, I can purchase a site license so that everyone in my company can take the course.
+License Admin
+As a buyer, I can easily apply a license I buy to myself so that I can instantly start viewing a course.
+As a buyer, I can distribute out licenses to others in my company so that they can view a course I pay for.
+As a buyer, I can share a company-wide license with everyone in my company so that everyone in the company can view the course. .
+Viewing Courses
+As a participant, I want each course element (such as a video) marked as viewed after I view or complete it so that I can see which parts of a course I’ve completed.
+As a participant, I can re-watch any video so that I can make sure I understand it.
+As a site visitor, I can view some videos for free so that I can decide if I want to buy the full course.
+As a participant, I can set a mode on the videos so that one begins as the previous one finishes so that I can watch without having to touch my keyboard, mouse or screen.
+Course Completion
+As a participant, I am shown a page telling me how to get my PDUs after I complete the course so that I earn the credit I might have been interested in.
+As a participant, I can earn a certificate of completion by finishing a course so that I have proof that I completed a course.
+As a participant, I can earn a badge showing that I completed a course so that I can display that badge on my own website.
+As a participant, I have a page I can link to and share with others that shows all the training courses I’ve completed so that people can see all the great stuff I’ve learned.
+Miscellaneous
+As a site visitor, I can read an FAQ so that all my questions are answered.
+As a search engine, I can view a site map so that all pages are indexed.
+As a site visitor, I can read a privacy policy so that I know what’s private.
+As a site visitor, I can sign up for a newsletter so that I get announcements about new courses and other information.
+As a site visitor, I see “Featured Products” on the home page so that I see the products the site most wants all visitors to see.
+As a participant, I do not want the site shut down while I’m in the midst of a quiz or video so that my progress isn’t interrupted.
+
+Forms
+
+As a participant, I can participate in a forum for a course so that I can discuss questions and topics with the instructor and other participants.
+
+Announcements
+
+As an instructor, I can post announcements to a project “home page” for a Scheduled Course so that I can tell participants about important thinks such as “I’m delayed in posting chapter 7.”.
+As a participant, I can read announcements from an instructor for a Scheduled Course so that I can keep up to date on news.
+
+Quizzes
+
+As an instructor, I can create quizzes so that participants can assess their learning.
+As a participant, I can take a quiz as part of a course so that I can get feedback on how well I learned material in the previous video(s). 
+As a participant, I see if I pass a quiz after I finish taking it so that I can get feedback on how well I learned material in the previous video(s).
+As a participant, I can see which quizzes I’ve passed, not passed, or not yet taken when viewing the course outline so that I know which quizzes I need to take or possibly re-take.
+As an instructor, I want quiz responses stored in the database so that I can see how people are doing at various questions, perhaps so I can fix one that is worded poorly.
+As a participant, I want to receive feedback after each quiz question so that I can see if I got the question right or wrong.
+As a participant, I can navigate a quiz by submitting an answer or by pressing skip (forward) or back so that I can answer questions in a different order if I’d like.
+As a participant, I can get answers via video rather than text so that I watch rather than read an answer.
+Non-Functional Requirements
+As a visitor, I want to be able to view the site and videos in any reasonable browser so that I can use what I’m accustomed to.
+
+Affiliates
+
+As a partner company, I would like to provide links to FrontRowAgile.com and get paid for referring people to the site so that I can become part of the 1%.
+As a partner company, I can embed Front Row Agile videos (free ones only) on my site so that people can enjoy those videos on my site, possibly giving me affiliate revenue but possibly just being about putting good content on my site.
+
+Comments
+
+As a participant, I can leave a comment about a course so that I can tell the world what I think of it.
+As an instructor, I can leave a comment about a sample video or the course so that I can respond to other comments.
+Course Evaluation
+As a participant, I am shown an evaluation form after completing a course so that I can tell FrontRowAgile.com what I think of their classes and their devilishly good-looking trainers.
+As an instructor, I can opt into receiving an email of every course evaluation as it completed by a participant so that I get real-time feedback on my courses.
+As an instructor, I can view all feedback for a course when logged in so that I can see historical or aggregate data on my courses.
+As an instructor, I can export all feedback for a course to a CSV file so that I can perform more in-depth analysis.
+
+Reporting
+
+As a site owner, I receive a periodic email summarizing registrations for the day, week. and month to date. so that I know how we’re doing.
+As a trainer, I receive a periodic sales summary at the frequencies I select so that I know how my courses are doing.
+As a trainer, I can run a few helpful reports to be determined later so that I can monitor various aspects of my courses.
+As a sys admin, I can run any report a trainer can run so that I can see overall information for any trainer on the site.
+
+PlanningPoker.com
+
+The user stories here were written for the first version of www.PlanningPoker.com, which allows estimators in different locations to estimate collaboratively.
+
+Game
+
+As a moderator, I want to create a new game by entering a name and an optional description so that I can start inviting estimators.
+As a moderator, I want to invite estimators by giving them a URL where they can access the game so that we can start the game.
+As an estimator, I want to join a game by entering my name on the page I received the URL for so that I can participate.
+As a moderator, I want to start a round by entering an item in a single multi-line text field so that we can estimate it.
+As an estimator, I want to see the item we’re estimating so that I know what I’m giving an estimate for.
+As an estimator, I want to see all items we will try to estimate this session so that I have a feel for the sizes of the various items.
+As a moderator, I want to see all items we try to estimate this session so that I can answer questions about the current story such as "does this include ___".
+As a moderator, I want to select an item to be estimated or re-estimated so that the team sees that item and can estimate it.
+As a moderator, I want to add an item to the list of items to be estimated so that so that we can be flexible and accommodate situations where we think of a new story while playing.
+As a moderator, I want to edit an item in the list of items to be estimated so that so that I can make it better reflect the team's understanding of the item.
+As a moderator, I want to delete an item from the list of items to be estimated so that so that we can remove it and not estimate it.
+As a participant, I want to immediately see that an estimate has been given by a specific estimator so that I know who has already given an estimate and who we’re still waiting for.
+As a participant, I want to be shown all estimates at the same time after all estimators have given their estimate so that I can be sure estimates are independent and not influenced by other estimates given in the same draw.
+As a participant, I want to be able to change my estimate up until the last person selects a card and all are shown so that so that I can change my mind based on information I hear.
+As a participant, I want to be able to see each estimator's prior estimates for the story being estimated so that I can see how his or her opinion has changed so I can ask questions.
+As a moderator, I want to show all estimates immediately so that I can decide to show the estimates that have been given even though not alle estimators have given their estimate.
+As a participant, I want to see who gave what estimates during the current round so that I know this when we’re discussing the estimates.
+As a participant, I want to be able start a two-minute countdown timer that all participants can see so that I can limit the time spent discussing the estimates when I think we’ve talked long enough.
+As a participant, I want to have the two-minute timer reset itself as soon as we all play an estimate so that it's ready for use on the next round.
+As a moderator, I want to accept the average of all estimates so that we can move on to the next item when we agree.
+As a moderator, I want to have the "estimate" field filled in automatically if all estimators show the same card so that I can accept it more quickly.
+As a moderator, I want to enter the agreed-upon estimate so that we can move on to the next item when we agree.
+As a participant, I want to scroll back through the stories and estimates from prior rounds so that I can use this information when I estimate the item of the current round.
+As a moderator, I want to estimate a story we estimated earlier in the session again so that we can give a new estimate if we feel different about the story after estimating other related stories.
+As a participant, I want to always have the cards in the same order across multiple draws so that it's easy to compare estimates.
+As a participant, I want to change my estimate as long as the draw has not been completed so that I can change my mind.
+As a moderator, I want to import stories (some of which may have estimates already) from a spreadsheet so that I don't have to copy and paste each individual story.
+As a moderator, I want to copy/paste stories (some of which may have estimates already) from a spreadsheet so that I can get started more quickly.
+
+Archive
+
+As a moderator, I want to browse through previous games so that I can find the previous game I’m looking for.
+As a moderator, I want to view a transcript of a game so that I can see the stories and estimates.
+As a moderator, I want to export a transcript of a game as a HTML file so that I can save the stories and estimates locally.
+As a moderator, I want to export a transcript of a game as a CSV file so that I can further process the stories and estimates.
+As a moderator, I want to delete a game so that stories and estimates for this game are no longer stored.
+
+Account
+
+As a moderator, I want to create an account for the application by entering my name, email address, a password and a username so that I can start using the application.
+As a moderator, I want to log in using my account name and password so that I can start using the application.
+As a moderator, I want to change my account details so that I can keep my account details up-to-date.
+As a moderator, I want to delete my account so that account information and games are no longer stored.
+As a moderator, I want to see dates and times in my local timezone so that I don't have to do timezone conversion myself.
+As a moderator, I want to get a password reminder by email so that I can get back to using the application when I've forgotten my password.
+As a moderator, I want to select whether to have the team estimate with {0, 1/2, 1, 2, 3, 5, 8, etc.} or {0, 1, 2, 4, 8, 16, 32, etc.} so that so that the team can use either the modified Fibonacci sequence or powers of 2.
+As a participant, I want to have a small thumbnail photo displayed near where my cards are played so that the game is more personal because I see who I'm estimating with.
+
+Non-Functional
+
+As a developer, I want to have written a site which is compliant with XHTML and CSS standards so that as many people as possible can access the site and view it as intended.
+As a developer, I want to have a list of definitions for commonly used terms so that everyone working on the project can understand each other more easily.
+As a developer, I want to have created database indexes so that the queries run as fast as possible.
+As a user, I want to be able to use Unicode so that I can use any language I like.
+As a developer, I want to have the application function correctly in Internet Explorer 6 and 7, Firefox 1.5 and 2, and Safari 2 so that as many people as possible can fully use the application.
+As a user, I want to see sensible and predictable URLs so that the application feels logical and transparent.
+As a developer, I want to have the site comply with the W3C accessibility guidelines where possible so that people with accessibility issues can use the application.
+As a user, I want to have the application respond quickly to my actions so that I don't get bored.
+As a user, I want to have nice error pages when something goes wrong so that I can trust the system and its developers.
+As a Researcher, I want results to be stored in a non-identifiable way so that I can study the data to see things like whether estimates converged around the first opinion given by "estimator A" for example.
+As Mike, I want to be able to see some metrics on use of the game so that I can see how much it is being used.
+As a moderator, I want to invite up to 15 estimators so that we can play with large but not immense teams.

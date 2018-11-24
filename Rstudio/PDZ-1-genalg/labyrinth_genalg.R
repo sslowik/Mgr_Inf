@@ -120,7 +120,7 @@ genalg2_labyrinth <- rbga(stringMin=vMin, stringMax=vMax,
                     suggestions=NULL,
                     popSize=lab_size*10, iters=lab_size*10,
                     mutationChance=0.1,
-                    elitism=T,
+                    elitism=F,
                     monitorFunc=NULL, evalFunc=evaluate3,
                     showSettings=FALSE, verbose=FALSE)
 

@@ -30,8 +30,8 @@ install.packages("pheatmap")
 
 library(pheatmap)
 
-pheatmap(lab_xx, cellwidth = 15, 
-         cellheight = 15, 
+pheatmap(lab_xx, cellwidth = 10, 
+         cellheight = 10, 
          cluster_row = FALSE, 
          cluster_col = FALSE, 
          color=gray.colors(2,start=1,end=0))
