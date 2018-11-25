@@ -1,0 +1,73 @@
+1. piszemy jakis kod   -   mo¿e byæ Gilded Rose albo coœ innego
+2. dodajemy do niego testy 
+   - Dr Bzyl w texttest doda³ kilka itemów i przepuœci³ je prze kolejne dni, po czym obserwacja efektu
+   - w tym nowy nieistniej¹cy wczeœniej item w testach
+   
+w testtext_fixture.rb: 
+   - #this item does not work properly
+     Item.new(name"Conjured Mana Cake", sell_in=3, quality=6),  # <-- :0
+     Item.new(name"Conjured Mana Cake", sell_in=-1, quality=6),  # <-- :0
+
+a w gilded_rose.rb trzeba dodaæ 3 linijki ¿eby program to uwzglêdnia³, np w ruby Bzyl doda³ "Conjured Mana Cake" 
+13       if item.name == "Conjured Mana Cake"
+14          item.quality = item.quality -1
+15       end 
+b
+
+oprócz tego: 
+
+45      if item.name == "Conjured Mana Cake" && item.quality > 0
+46           item.quality = item.quality - 1
+
+
+3. Refaktorujemy kod ¿eby go ulepszyæ, uproœciæ, usprawniæ
+   - musi dzia³aæ
+   - mo¿na na gotowym projekcie albo cos w³asnego. Piszemy kod tak okropnie, ¿e wystarcza 2-3 klasy, ¿eby nikt nie wiedzia³ o co chodzi
+
+4. Korzystamy z regu³ opisnaych w materia³ach 
+   - przede wszystkim wg Dr Bzyla - POLIMORFIZM
+   - regu³y ABC
+   - regu³y od guru tego tematu, Fowler?  jakaœ œwietna ksi¹¿ka w³aœnie wysz³a jego autorstwa
+
+https://martinfowler.com/articles/refactoring-2nd-ed.html
+
+
+
+5. W prezentacji trzeba bêdzie opisaæ: 
+   - zasta³em coœ takiego (wyniki FLOGa)
+   - przejrza³em kod
+   - wyubra³em takie regu³y (Polimorfizm, Duplikacja) 
+   - po ich zastosowaniu wynik jest taki
+
+   - jeszcze nie ok - refaktor - flog - ocena
+     i takie z 2,3 iteracje
+   
+   - i ostatni krok dla debeœciaków - zasada open-close - kod jest otwarty, ³atwy na zmiany
+
+
+FINAL. Na 3 wyk³adach w styczniu trzeba bêdzie prezentowac projekty
+   - dobieramy grupy
+   - temat
+   - kod
+   - testy
+   - metody refaktoryzaji
+   - refaktorujemy
+   - puszczamy floga
+   oceniamy wyniki
+
+
+   - prezentujemy wyniki
+
+
+
+
+
+Mo¿na to zrobiæ na gotowym projekcie, np gra w kó³ko i krzy¿yk z mojego CodeMe <- proponujemy zmianê, poprawkê, itd. 
+
+Wynikiem mo¿e byæ ttt w wersji graficznej :) 
+
+
+MO¯NA ZASTOSOWAÆ PO PROSTU WZORCE PROJEKTOWE ? 
+
+
+WARTO TE¯ ZNALEÆ COŒ CO POKAZUJE FAJNY TEMAT, NP WY£APUJE DEAD CODE - ZA TO PI¥TECZKA JAK gNIC
