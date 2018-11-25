@@ -1,0 +1,18 @@
+1. algorytmy genetyczne
+   - definicja
+   - tabelki
+
+2. tabelka od funkcji fitness
+
+3. klasyfikatory - 
+   a) KNN- jak działa i jak rozrysować na prostym wykresie (jak blisko kropki, która przejmuje które)
+   b) N.B. - KALKULATOR WZIĄĆ
+   c) drzewo
+   
+   ewaluacja - jak dobrze działają klasyfikatory (dokładność albo accuracy) 
+             - trzeba udać podać tablicę błędów (confusion matrix), wskazać, jakie błędy występiły
+
+4. grupowanie - umieć zasymulować dla iluś klastrów
+
+   reguły asocjacyjne - ? ? ? 
+   
