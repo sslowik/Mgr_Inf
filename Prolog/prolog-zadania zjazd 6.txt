@@ -1,0 +1,190 @@
+
+Zadania (Prolog)
+
+    Dlugosc listy mozna w Prologu zdefiniowac nastepujaco:
+
+      length(0, []).
+      length(N,[_|L]) :- length(M,L), N is M+1.
+
+    Prosze zdefiniowac predykaty member/2 oraz sil/2, fib/2 i nwd/3.
+
+    Niech bedzie dana baza danych zawierajaca predykaty parent/2, female/1 i male/1.
+    Prosze zdefiniowac predykaty child/2, mother/2, sister/2, has_a_child/1, grandparent/2 oraz predecessor/2.
+
+    Niech bedzie dany nastepujacy program:
+
+     f(1,one).
+     f(s(1),two).
+     f(s(s(1)),three).
+     f(s(s(s(X))),N) :- f(X,N). 
+
+    Jak odpowiada Prolog na pytanie
+        f(s(1),A)?
+        f(s(s(1)),two)?
+        f(s(s(s(s(s(s(1)))))),C)?
+        f(D,three)? 
+
+    Prosze zdefiniowac predykat rzym/2, który transformuje rzymskie liczby do liczb dziesietnich.
+    Liczby rzymskie mozna po prostu reprezentowac jako listy, n.p. [x,l,v,i,i].
+
+    Niech beda dane nastepujace predykaty:
+
+     q1(X,Y) :- p(X,Y).                q2(X,Y) :- p(X,Z), q2(Z,Y).
+     q1(X,Y) :- p(X,Z), q1(Z,Y).       q2(X,Y) :- p(X,Y).  
+
+     q3(X,Y) :- p(X,Y).                q4(X,Y) :- q4(X,Z), p(Z,Y).  
+     q3(X,Y) :- q3(X,Z), p(Z,Y).       q4(X,Y) :- p(X,Y).  
+
+    oraz baza danych dla predykat p:
+
+     p(pam,bob).       
+     p(tom,bob).
+     p(tom,liz).
+     p(bob,ann).      
+     p(bob,pat).     
+     p(pat,jim). 
+
+    Prosze zilustrowac, jak Prolog odpowiada na pytania ?-qi(tom,pat). oraz ?-qi(liz,jim).
+
+    Niech beda dane nastepujaca defincja predykatu append2.
+
+      append2([X|L1],L2,[X|L3]) :- append2(L1,L2,L3).
+      append2([],L,L).   
+
+    Prosze zilustrowac, jak Prolog odpowiada na pytanie
+
+     ?- append2(X,[3,4],[2,3,4]).
+
+    Prosze zdefiniowac nastepujace predykaty dla list.
+
+        last(X,L), który jest spelniony, jezeli X jest ostatnim elementem listy L.
+        delete(X,L1,L2), który jest spelniony, jezeli L2 równa sie L1 bez elementu X.
+        delete(L1,L2), który jest spelniony, jezeli L2 równa sie L1 bez ostatnich trzech elementów.
+        reverse(L1,L2), który jest spelniony, jezeli L2 jest lista L1 w odwrotnej kolejnosci.
+        evenlength(L) oraz oddlength(L), które sa spelnione, jezeli dlugosc listy L jest parzysta oraz nieparzysta.
+        shift(L1,L2), który jest spelniony, jezeli L2 równa sie L1 po jednej rotacji do lewej.
+        Przyklad:
+
+         ?- shift([1,2,3,4,5],L).
+         L = [2,3,4,5,1] 
+
+        quadrat(L1,L2), który jest spelniony, jezeli L2 zawiera quadraty elementów listy L1.
+        Przyklad:
+
+         ?- quadrat([1,2,3,4,5],L).
+         L = [1,4,9,16,25] 
+
+        combine(L1,L2,L3), który jest spelniony, jezeli L3 zawiera pary elementów z list L1 i L2.
+        Przyklad:
+
+         ?- combine([1,2,3,4],[a,b,c,d],L).
+         L = [[1,a],[2,b],[3,c],[4,d]] 
+
+        palindrom(L), który jest spelniony, jezeli lista L zawiera palindrom.
+        Przyklady:
+
+         ?- palindrom([a,b,c]).
+         no
+         ?- palindrom([a,b,c,d,c,b,a]).
+         yes 
+
+        p(X,L,Y,Z), który jest spelniony, jezeli Y jest poprzednikiem elementu X w liscie L a Z nastepca elementu X w liscie L.
+        Przyklad:
+
+         ?- p(3,[1,2,3,4,5],Y,Z).
+         Y = 2, Z = 4 
+
+        q(X,L1,L2), który jest spelniony, jezeli L2 równa sie poczatku listy L1 do podwójnego wystapienia elementu X.
+        Przyklad:
+
+         ?- q(3,[1,2,3,3,1,2,4],Z).
+         Z = [1,2,3,3] 
+
+    Prosze zdefiniowac nastepujace predykaty dla list.
+
+        ordered(L), który jest spelniony, jezeli lista L jest posortowana.
+        mergesort(L1,L2), który jest spelniony, jezeli lista L2 jest wersja posortowana listy L1. Predykat ma simulowac algorytm mergesort.
+
+    Drzewo binarne D jest albo pusty (repezentowane przez nil) albo zawiera element X i dwa poddrzewa L i P (reprezentowane przez drzewo(X,L,P)).
+    Prosze zdefiniowac nastepujace predykaty dla drzew.
+
+        size(D,N), który jest spelniony, jezeli N jest iloscia elementów drzewa D.
+        search(D,N), który jest spelniony, jezeli N jest elementem drzewa D.
+        max(D,N), który jest spelniony, jezeli N jest maximum elementów w drzewie D.
+        times(N,D1,D2), który bierzy wszystkie wartosci wezlów drzewa D1 razy N.
+        preorder(D,L), który jest spelniony, jezeli lista L zawiera elementy drzewa D w kolejnosci prefiksowym. 
+
+    Graf mozna reprezentowac przy uzciu predykatu edge(V1,V2), gdzie V1 oraz V2 sa wezlami.
+
+        Prosze zdefiniowac predykat path(V1,V2), który znajduje droge miedzy V1 i V2.
+        Prosze zdefiniowac predykat path(V1,V2,L), który znajduje droge miedzy V1 i V2 oraz droge ta podaje w liscie L.
+        Jak mozna reprezentowac graf z wagami oraz w takim grafie obliczyc koszty drogi miedzy wezlami V1 i V2? 
+
+    Uzywajac rezolucje prosze sprawdzic czy nastepujace konsekwencje logiczne sa poprawne.
+
+    a) (p ? q) ? r |= p ? (q ? r)
+
+    b) p ? (q ? r) |= (p ? q) ? r
+
+    Niech beda
+
+    A = (p ? (¬ q ? ¬ r)) ? ((p ? r) ? ( q ? (q ? r)))
+    B = (p ? (¬ q ? r)) ? (r ? (r ? p))
+    C = (p ? r) ? (¬(q ? r)).
+
+    Uzywajac rezolucje prosze sprawdzic czy {A,B}|= C jest wazna.
+
+    Niech beda
+
+    A = (¬q ? (p ? r))
+    B = r ? (¬p ? ¬q)
+    C = (r ? w) ? ¬(w ? ¬q)
+
+    Uzywajac rezolucje prosze sprawdzic czy (A ? B) ? C jest tautologia.
+
+    Niech beda
+
+    A = ?x?y?z p(x,y,z)
+    B = ?u?v?w?x?y?z (p(x,y,u) ? p(y,z,v)) ? (p(x,v,w) ? p(u,z,w))
+    C = ?x (?y p(x,y,y)) ? (?y?z p(z,y,x))
+
+    Prosze transformowac A, B oraz C do zbiorów klausuli.
+
+    Prosze obliczyc najbardziej ogólny unifikator dla nastepujacych wyrazen.
+
+    a)   f(x,g(b))                         f(a,y)
+    b)   f(h(x,b),y)                      f(h(a,y),x)
+    c)   f(x,y)                              f(h(x,b),y)
+    d)   g(x,h(x,y),h(y,h(x,y)))     g(x,y',h(z,y'))
+    e)   g(x,h(x,y),h(y,h(x,y)))     g(x,y',h(y',z))
+    f)   f(a,x,h(g(y)))                   f(z,h(z),h(z'))
+
+    Uzywajac rezolucje prosze pokazac, ze A = (?x?y p(x,y) ? ?y?z q(y,z)) ? ?x?y?z (p(x,y) ? q(y,z)) jest tautologia.
+
+    Prosze dla nastepujacych pytan podac drzewo SLD. Jakie odpowiedzi daje Prolog?
+
+         s(X) :- p(X), r(X).
+         s(X) :- q(X).
+         p(a).   q(a).   r(a).
+         p(b).   q(c).   r(b).                        ?- s(X).
+
+         q(X) :- p(X), r(X).
+         p(a).
+         r(a).
+         r(f(Y)) :- r(Y).                             ?- r(Z).  oraz  ?- q(Z).
+
+         p(X,Z) :- q(X,Y), p(Y,Z).
+         p(X,X).
+         q(a,b).                                      ?- p(X,b). 
+
+    Prosze dla nastepujacych pytan podac drzewo SLD. Jakie odpowiedzi daje Prolog?
+
+         append1([],L,L).
+         append1([H|L1],L2,[H|L3]) :- append1(L1,L2,L3).
+
+         append2([H|L1],L2,[H|L3]) :- append2(L1,L2,L3).
+         append2([],L,L).                                   ?- appendi(X,[3,4],[2,3,4]).
+
+         is_list([]).
+         is_list([X|L]) :- is_list(L).                      ?- is_list(L).
+
