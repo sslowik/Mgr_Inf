@@ -1,4 +1,4 @@
-1. algorytmy genetyczne
+﻿1. algorytmy genetyczne
    - definicja
    - tabelki
 
@@ -16,3 +16,22 @@
 
    reguły asocjacyjne - ? ? ? 
    
+
+
+od Bartka: 
+
+
+Kolokwium:
+
+Teoria + obl.
+
+
+    Algorytm genetyczny - co robi z pop, co sie dzieje, co to selekcja itp ( jak powstaja dzieci w pokoleniu)
+    Tabelki: co to fitnes, co to chromosom
+    Klasyfikatory: kNN ( jak dziala, symulacja na wykresie),
+    NaiveBayes, (KALKULATOR)
+    Drzewo (umiec wykonac)
+    Ewaluacja - sprawdzenie jak dobrze sobie radzą - dokładność (accuracy)
+    Confusion matrix (dla ewaluacji) - wskazac jakie błędy
+    Grupowanie (lab 5) + reguły asocjacyjne
+
