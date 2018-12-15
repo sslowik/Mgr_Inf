@@ -1,49 +1,69 @@
 getwd()
 setwd("D:/Mgr_Inf/Rstudio/Proj2-DataMining")
 
-#read csv database and put it into data.frame "cats"
+#clear the environment 
 
-cats_f <- read.csv("aac_shelter_cat_outcome_eng.csv", header=T, sep=",", na.strings="NA", nrows=10000)
-nrow(cats)
-cats_f[1,]
+rm(list=ls())
+
+#read csv database and put first 10k rows into data.frame "cats"
+
+cats <- read.csv("aac_shelter_cat_outcome_eng.csv", header=T, sep=",", na.strings="NA", nrows=10000)
+cats[1,]
 
 #display the header columns names: 
-names(cats_f)
-
-# input cats_f into target data_frame - it's easier to repeat steps
-cats <- cats_f
 names(cats)
+
 #removing redundant columns -different methods
 
 # by specific column name
-cats$animal_id <- NULL
+
+cats$age_upon_outcome <- NULL
 
 #by columns numbers
-cats[,c(1,2,3)] <- list(NULL)
+
+cats[,c(1,2)] <- list(NULL)
 
 #by columns names, #vector with columns to delete: 
-redundant <- c("date_of_birth",
+
+redundant <- c("age_upon_outcome",
+               "animal_id", 
+               "animal_type",
+               "breed",
+               "color",
+               "date_of_birth",
+               "dob_year", 
+               "dob_month",
                "datetime",
                "monthyear",
                "outcome_subtype",
-               "coat_pattern", 
-               "color2", 
-               "Periods", 
-               "Period.Range", 
-               "outcome_age_.years.", 
-               "breed1", 
-               "breed2")
+               "sex_upon_outcome",
+               "count",
+               "Periods",
+               "Period.Range",
+               "sex_age_outcome",
+               "dob_monthyear",
+               "breed2",
+               "domestic_breed",
+               "coat_pattern",
+               "color2",
+               "outcome_age_.years.",
+               "outcome_year",
+               "outcome_hour"
+               )
 
 cats[,redundant] <- list(NULL)
 names(cats)
 
+cats[cats$breed=="siamese",]
+
 #looking for the interesting values by checking columns levels
 
-levels(cats$sex_upon_outcome)
 levels(cats$age_group)
-levels(cats$outcome_subtype)
+levels(cats$outcome_type)
 
-# adding level to names, but i's not needed probably because there are no factors
+cats[cats$outcome_type=="Return to Owner"]
+
+# adding level 'noname' to names
 levels(cats$name) <- c(levels(cats$name), "noname")
 
 #adding "noname" value for cats which have no name given
@@ -55,14 +75,6 @@ cats$name <- gsub( "[*]","", cats$name)
 
 
 class(cats)
-
-
-
-y <- gl(2, 4, 8)
-levels(y) <- c("low", "high")
-y
-
-
 
 
 cats <- cats[-c(1),]
