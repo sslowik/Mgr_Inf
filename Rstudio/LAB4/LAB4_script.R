@@ -39,6 +39,7 @@ normalize <- function(x) {
 
 
 iris_norm <- as.data.frame(lapply(iris[1:4], normalize))
+
 set.seed(1234)
 ind <- sample(2, nrow(iris), replace=TRUE, prob=c(0.67, 0.33))
 iris.training <- iris[ind==1, 1:4]
