@@ -1,3 +1,1 @@
-# repository for my studies Mgr_Inf on Gdansk University
-
-# I'm working hard to be smart :)
+# repository for my Informatics studies on Gdansk University
