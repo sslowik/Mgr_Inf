@@ -1,0 +1,51 @@
+member(X,[X|_]). member(X,[_|T]) :- member(X,T).
+    take(X,[X|T],T). 
+    take(X,[H|T],[H|T2]):-take(X,T,T2).
+append([],L,L). append([H|T],L,[H|L2]):-append(T,L,L2]).
+    pal([]). pal([_]). 
+    pal(L):-append([X|T],[X],L),pal(T).
+first([F|_],F).
+    last([Elem], Elem).
+    last([_|Tail], Elem) :- last(Tail, Elem).
+last3(Es,L,R):-append(R,[L],Es).
+prefix(P,L):-append(P,_,L).
+    suffix(S,L):-append(_,S,L)
+select(X,[X|Y],Y).
+select(X,[Y|Z1],[Y|Z2]):-select(X,Z1,Z2).
+    zawiera(S,L):-append(_,L2,L),append(S,_,L2). 
+d³([],0). d³([_|L],D):-d³(L,X),D1 is X + 1.  
+    maxi(X,Y,Z) :- X >= Y, !, X = Z.  
+    maxi(_,Y,Y).
+-----------------------------------------------
+istree(nil).
+istree(t(_,L,R)) :- istree(L), istree(R).
+    symmetric(nil).
+    symmetric(t(_,L,R)) :- mirror(L,R).
+mirror(nil,nil).
+mirror(t(_,L1,R1),t(_,L2,R2)) :- 
+    mirror(L1,R2), mirror(R1,L2).
+countNodes(nil,0).
+countNodes(t(_,Left,Right),N) :-
+   countNodes(Left,NLeft),
+   countNodes(Right,NRight),
+   N is NLeft + NRight + 1.
+searchTree(t(N,_,_),N).
+searchTree(t(_,Left,Right), N) :- 
+    searchTree(Left, N); 
+    searchTree(Right, N). 
+maxTree(nil,0). 
+maxTree(t(N,nil,nil),N). 
+maxTree(t(_,L,R),N) :- maxTree(L, NL), maxTree(R,NR), 
+                      NL > NR, !, N = NL. 
+maxTree(t(_,L,R),N) :- maxTree(L, NL), maxTree(R,NR), 
+                      NR > NL, N = NR. 
+treeTimes(_,nil,0). 
+treeTimes(N,t(Root,nil,nil),D2) :- D2 is Root * N. 
+treeTimes(N,t(Root,L,R),D3) :- treeTimes(N,L,DL), 
+                               treeTimes(N,R,DR), 
+                               D3 is DL + DR + (N * Root).
+treePreorder(nil,[]). 
+treePreorder(t(X, L, R), [X|T]) :- 
+    treePreorder(L, LT),
+    treePreorder(R, RT),
+    append(LT, RT, T).
