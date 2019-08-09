@@ -1,0 +1,14 @@
+github.com/bbasinski/gilded-rose
+
+
+Zadanie: https://github.com/emilybache/GildedRose-Refactoring-Kata
+
+rozwi¹zania Kasjana I kogoœ: 
+
+https://github.com/bbasinski/gilded-rose
+
+gitlab.com/kaswerug
+
+https://github.com/tomftb
+
+https://github.com/mmazepa/zjprog_egzamin.git
