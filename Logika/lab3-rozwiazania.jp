@@ -1,0 +1,84 @@
+﻿CONJECTUREPANEL "Intuicjonistyczny rachunek predykatów"
+CURRENTPROOF "actual j, actual k, ∃x.¬R(x) ⊢ ∃y.(R(y)→R(j)∧R(k))"
+INFER actual j,
+     actual k,
+     ∃x.¬R(x)
+     ⊢ ∃y.(R(y)→R(j)∧R(k))
+FORMULAE
+0 actual i,
+1 R(i)→R(j)∧R(k),
+2 R(y)→R(j)∧R(k),
+3 i,
+4 y,
+5 ⊥,
+6 R(j)∧R(k),
+7 ¬R(i),
+8 R(i),
+9 ∃y.(R(y)→R(j)∧R(k)),
+10 ∃x.¬R(x),
+11 ¬R(x),
+12 x,
+13 actual j,
+14 actual k 
+IS
+SEQ ("∃ elim"[i,C,P,x\3,9,11,12]) (hyp[A\10]) (cut[B,C\1,9]) ("→ intro"[A,B\8,6]) (cut[B,C\5,6]) ("¬ elim"[B\8]) (hyp[A\8]) (hyp[A\7]) ("contra (constructive)"[B\6]) (hyp[A\5]) ("∃ intro"[P,i,x\2,3,4]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Intuicjonistyczny rachunek predykatów"
+CURRENTPROOF "∃x.(R(x)∧S(x)) ⊢ ∃y.R(y)∧∃z.S(z)"
+INFER ∃x.(R(x)∧S(x))
+     ⊢ ∃y.R(y)∧∃z.S(z)
+FORMULAE
+0 ∃z.S(z),
+1 ∃y.R(y),
+2 actual i,
+3 S(i),
+4 S(z),
+5 i,
+6 z,
+7 ∃y.R(y)∧∃z.S(z),
+8 R(i),
+9 R(y),
+10 y,
+11 R(i)∧S(i),
+12 ∃x.(R(x)∧S(x)),
+13 R(x)∧S(x),
+14 x,
+15 ∃x.(R(x)∧S(x))
+IS
+SEQ ("∃ elim"[i,C,P,x\5,7,13,14]) (hyp[A\12]) (cut[B,C\3,7]) (LAYOUT "∧ elim" (0) ("∧ elim(R)"[A,B\8,3]) (hyp[A\11])) (cut[B,C\8,7]) (NEXTGOAL) (cut[B,C\1,7]) ("∃ intro"[P,i,x\9,5,10]) (hyp[A\8]) (hyp[A\2]) (cut[B,C\3,7]) (hyp[A\3]) (cut[B,C\0,7]) ("∃ intro"[P,i,x\4,5,6]) (hyp[A\3]) (hyp[A\2]) ("∧ intro"[A,B\1,0]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Intuicjonistyczny rachunek predykatów"
+CURRENTPROOF "∃x.R(x)∨∃y.S(y) ⊢ ∃z.(R(z)∨S(z))"
+INFER ∃x.R(x)∨∃y.S(y)
+     ⊢ ∃z.(R(z)∨S(z))
+FORMULAE
+0 actual i,
+1 R(i)∨S(i),
+2 R(z)∨S(z),
+3 i,
+4 z,
+5 ∃z.(R(z)∨S(z)),
+6 ∃x.R(x),
+7 R(x),
+8 x,
+9 ∃x.R(x)∨∃y.S(y),
+10 ∃y.S(y),
+11 R(i)
+IS
+SEQ ("∨ elim"[A,B,C\6,10,5]) (hyp[A\9]) ("∃ elim"[i,C,P,x\3,5,7,8]) (hyp[A\6]) (cut[B,C\1,5]) (NEXTGOAL) ("∃ intro"[P,i,x\2,3,4]) (hyp[A\1]) (hyp[A\0]) (NEXTGOAL)
+END
+CONJECTUREPANEL "Intuicjonistyczny rachunek predykatów"
+CURRENTPROOF "∀x.(R(x)∧S(x)) ⊢ ∀y.R(y)∧∀z.S(z)"
+INFER ∀x.(R(x)∧S(x))
+     ⊢ ∀y.R(y)∧∀z.S(z)
+FORMULAE
+0 ∀z.S(z),
+1 ∀y.R(y),
+2 i,
+3 S(z),
+4 z,
+5 ∀y.R(y)∧∀z.S(z),
+6 ∀x.(R(x)∧S(x))
+IS
+SEQ (cut[B,C\1,5]) (NEXTGOAL) (cut[B,C\0,5]) ("∀ intro"[i,P,x\2,3,4]) (NEXTGOAL) ("∧ intro"[A,B\1,0]) (hyp[A\1]) (hyp[A\0])
+END
