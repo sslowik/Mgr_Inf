@@ -1,0 +1,76 @@
+﻿CONJECTUREPANEL "Równoważności z kwantyfikatorami"
+PROOF "∀x.(R(x)→S) ⊢ ∃x.R(x)→S"
+WHERE x NOTIN S 
+INFER ∀x.(R(x)→S)
+     ⊢ ∃x.R(x)→S 
+FORMULAE
+0 S,
+1 R(i),
+2 R(i)→S,
+3 actual i,
+4 ∀x.(R(x)→S),
+5 R(x)→S,
+6 i,
+7 x,
+8 ∃x.R(x),
+9 R(x),
+10 ∀x.(R(x)→S)
+IS
+SEQ ("→ intro"[A,B\8,0]) ("∃ elim"[i,C,P,x\6,0,9,7]) (hyp[A\8]) (cut[B,C\2,0]) ("∀ elim"[P,i,x\5,6,7]) (hyp[A\4]) (hyp[A\3]) (cut[B,C\0,0]) ("→ elim"[A,B\1,0]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Równoważności z kwantyfikatorami klasycznie"
+PROOF "∀x.(R∨S(x)) ⊢ R∨∀x.S(x)"
+WHERE x NOTIN R 
+INFER ∀x.(R∨S(x))
+     ⊢ R∨∀x.S(x)
+FORMULAE
+0 ⊥,
+1 ¬(R∨∀x.S(x)),
+2 R∨∀x.S(x),
+3 ∀x.S(x),
+4 R,
+5 S(i),
+6 R∨S(i),
+7 actual i,
+8 ∀x.(R∨S(x)),
+9 R∨S(x),
+10 i,
+11 x,
+12 S(x),
+13 ∀x.(R∨S(x))
+IS
+SEQ ("contra (classical)"[A\2]) (cut[B,C\3,0]) ("∀ intro"[i,P,x\10,12,11]) (cut[B,C\6,5]) ("∀ elim"[P,i,x\9,10,11]) (hyp[A\8]) (hyp[A\7]) ("∨ elim"[A,B,C\4,5,5]) (hyp[A\6]) (cut[B,C\2,5]) (LAYOUT "∨ intro" (0) ("∨ intro(L)"[B,A\3,4]) (hyp[A\4])) (cut[B,C\0,5]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) ("contra (constructive)"[B\5]) (hyp[A\0]) (hyp[A\5]) (cut[B,C\2,0]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\4,3]) (hyp[A\3])) (cut[B,C\0,0]) ("¬ elim"[B\2]) (hyp[A\2]) (hyp[A\1]) (hyp[A\0])
+END
+CONJECTUREPANEL "Równoważności z kwantyfikatorami"
+CURRENTPROOF "R→∀x.S(x) ⊢ ∀x.(R→S(x))"
+INFER R→∀x.S(x)
+     ⊢ ∀x.(R→S(x))
+FORMULAE
+0 R[x\i],
+1 S(i),
+2 i,
+3 R→S(x),
+4 x,
+5 actual i,
+6 R→∀x.S(x)
+IS
+SEQ ("∀ intro"[i,P,x\2,3,4]) ("→ intro"[A,B\0,1]) (NEXTGOAL)
+END
+CONJECTUREPANEL "Równoważności z kwantyfikatorami"
+CURRENTPROOF "actual j, R∨∃x.P(x) ⊢ ∃x.(R∨P(x))"
+INFER actual j,
+     R∨∃x.P(x)
+     ⊢ ∃x.(R∨P(x))
+FORMULAE
+0 actual j,
+1 R[x\j]∨P(j),
+2 R∨P(x),
+3 j,
+4 x,
+5 P(j),
+6 R[x\j],
+7 ∃x.(R∨P(x)),
+8 R∨∃x.P(x)
+IS
+SEQ (cut[B,C\5,7]) (NEXTGOAL) (cut[B,C\1,7]) (LAYOUT "∨ intro" (0) ("∨ intro(R)"[B,A\6,5]) (hyp[A\5])) ("∃ intro"[P,i,x\2,3,4]) (hyp[A\1]) (hyp[A\0])
+END
