@@ -1,0 +1,88 @@
+02-Dec-2020 11:34:02.413 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.0-M10
+02-Dec-2020 11:34:02.417 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 12 2020 11:01:14 UTC
+02-Dec-2020 11:34:02.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.0.0
+02-Dec-2020 11:34:02.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+02-Dec-2020 11:34:02.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+02-Dec-2020 11:34:02.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Dec-2020 11:34:02.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_271
+02-Dec-2020 11:34:02.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_271-b09
+02-Dec-2020 11:34:02.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-Dec-2020 11:34:02.419 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10
+02-Dec-2020 11:34:02.420 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10
+02-Dec-2020 11:34:02.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\conf\logging.properties
+02-Dec-2020 11:34:02.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Dec-2020 11:34:02.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Dec-2020 11:34:02.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Dec-2020 11:34:02.424 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+02-Dec-2020 11:34:02.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10
+02-Dec-2020 11:34:02.425 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10
+02-Dec-2020 11:34:02.426 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\temp
+02-Dec-2020 11:34:02.428 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+02-Dec-2020 11:34:02.429 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+02-Dec-2020 11:34:02.435 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+02-Dec-2020 11:34:02.811 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:34:02.840 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [607] milliseconds
+02-Dec-2020 11:34:02.871 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Dec-2020 11:34:02.871 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.0-M10]
+02-Dec-2020 11:34:02.883 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\docs]
+02-Dec-2020 11:34:03.384 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [271] milliseconds.
+02-Dec-2020 11:34:03.404 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\docs] has finished in [521] ms
+02-Dec-2020 11:34:03.405 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\examples]
+02-Dec-2020 11:34:03.711 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\examples] has finished in [306] ms
+02-Dec-2020 11:34:03.712 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\host-manager]
+02-Dec-2020 11:34:03.749 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\host-manager] has finished in [37] ms
+02-Dec-2020 11:34:03.749 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\manager]
+02-Dec-2020 11:34:03.779 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\manager] has finished in [30] ms
+02-Dec-2020 11:34:03.779 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\ROOT]
+02-Dec-2020 11:34:03.801 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\slawo\Downloads\apache-tomcat-10.0.0-M10-windows-x64\apache-tomcat-10.0.0-M10\webapps\ROOT] has finished in [22] ms
+02-Dec-2020 11:34:03.804 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:34:03.820 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [980] milliseconds
+02-Dec-2020 11:44:26.802 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+02-Dec-2020 11:44:26.803 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:44:27.042 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+02-Dec-2020 11:44:27.064 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:44:27.090 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:48:12.752 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.0.0-M10
+02-Dec-2020 11:48:12.754 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Nov 12 2020 11:01:14 UTC
+02-Dec-2020 11:48:12.754 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.0.0.0
+02-Dec-2020 11:48:12.754 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+02-Dec-2020 11:48:12.754 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+02-Dec-2020 11:48:12.754 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+02-Dec-2020 11:48:12.755 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jre1.8.0_271
+02-Dec-2020 11:48:12.755 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_271-b09
+02-Dec-2020 11:48:12.755 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+02-Dec-2020 11:48:12.755 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Tomcat
+02-Dec-2020 11:48:12.755 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Tomcat
+02-Dec-2020 11:48:12.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Tomcat\conf\logging.properties
+02-Dec-2020 11:48:12.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+02-Dec-2020 11:48:12.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+02-Dec-2020 11:48:12.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+02-Dec-2020 11:48:12.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+02-Dec-2020 11:48:12.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Tomcat
+02-Dec-2020 11:48:12.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Tomcat
+02-Dec-2020 11:48:12.758 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Tomcat\temp
+02-Dec-2020 11:48:12.761 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+02-Dec-2020 11:48:12.761 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+02-Dec-2020 11:48:12.766 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+02-Dec-2020 11:48:13.057 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:48:13.078 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [467] milliseconds
+02-Dec-2020 11:48:13.102 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+02-Dec-2020 11:48:13.102 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.0.0-M10]
+02-Dec-2020 11:48:13.114 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Tomcat\webapps\docs]
+02-Dec-2020 11:48:13.570 WARNING [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [253] milliseconds.
+02-Dec-2020 11:48:13.587 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Tomcat\webapps\docs] has finished in [473] ms
+02-Dec-2020 11:48:13.588 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Tomcat\webapps\examples]
+02-Dec-2020 11:48:13.868 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Tomcat\webapps\examples] has finished in [280] ms
+02-Dec-2020 11:48:13.869 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Tomcat\webapps\host-manager]
+02-Dec-2020 11:48:13.894 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Tomcat\webapps\host-manager] has finished in [26] ms
+02-Dec-2020 11:48:13.894 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Tomcat\webapps\manager]
+02-Dec-2020 11:48:13.919 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Tomcat\webapps\manager] has finished in [24] ms
+02-Dec-2020 11:48:13.919 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Tomcat\webapps\ROOT]
+02-Dec-2020 11:48:13.939 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Tomcat\webapps\ROOT] has finished in [20] ms
+02-Dec-2020 11:48:13.942 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:48:13.957 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [879] milliseconds
+02-Dec-2020 11:51:38.788 INFO [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+02-Dec-2020 11:51:38.789 INFO [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:51:39.049 INFO [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+02-Dec-2020 11:51:39.068 INFO [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+02-Dec-2020 11:51:39.096 INFO [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
