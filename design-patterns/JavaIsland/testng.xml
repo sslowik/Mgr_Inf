@@ -1,0 +1,9 @@
+<?xml version = "1.0" encoding = "UTF-8"?><!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Design Patterns Tests">
+    <test name = "Singleton test">
+        <classes>
+            <class name = "com.designpatterns.mgrinf.singleton.SingletonDesignPatternTest"/>
+        </classes>
+    </test>
+</suite>
